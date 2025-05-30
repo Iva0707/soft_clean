@@ -1,0 +1,14 @@
+.label {
+  padding: 1.5rem 4.4rem;
+
+  text-align: center;
+  color: $white;
+
+  background: #ffc24d;
+
+  border-radius: 3rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

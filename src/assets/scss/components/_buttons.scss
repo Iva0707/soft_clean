@@ -1,0 +1,49 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 8rem;
+  padding-inline: 2.2rem;
+
+  font-family: $font;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 10rem;
+
+  cursor: pointer;
+
+  &.button_blue {
+    background: $blue;
+
+    box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($blue, 0.6);
+  }
+
+  &.button_yellow {
+    background: $yellow;
+
+    box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($yellow, 0.6);
+  }
+
+  &.button_overline {
+    min-height: 5.5rem;
+
+    color: $black_1;
+
+    border-color: $blue;
+  }
+
+  &.button_basic {
+    min-height: 5.5rem;
+
+    color: $blue;
+  }
+}
