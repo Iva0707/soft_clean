@@ -1,34 +1,8 @@
-.inventory__titles {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	text-align: center;
-
-	@media (min-width: 768px) {
-		max-width: 76rem;
-		margin-inline: auto;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 3rem;
-	}
-}
-
-.inventory__title {
-	&:not(:last-child) {
-		margin-bottom: 1rem;
-	}
-}
-
-.inventory__subtitle {
-	color: $gray;
-}
-
 .inventory__content {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: auto auto;
+	grid-template-rows: auto;
+	grid-auto-flow: row;
 	align-items: center;
 	gap: 4rem;
 
@@ -51,6 +25,7 @@
 .inventory__item_image_wrapper {
 	display: block;
 
+	width: 100%;
 	max-width: 12.5rem;
 	aspect-ratio: 1;
 
@@ -78,7 +53,7 @@
 			border: 1px solid $gray_1;
 			border-radius: 100%;
 
-			@include centered;
+			@include pseudo-center;
 		}
 
 		&::before {
@@ -89,17 +64,19 @@
 
 			border-radius: 100%;
 
-			@include centered;
+			@include pseudo-center;
 		}
 	}
 }
 
 .inventory__item_image {
-	min-width: 110%;
-
 	object-position: top;
 
 	@include image-cover;
+
+	&.inventory__item_image--big {
+		min-width: 130%;
+	}
 
 	.inventory__item--main & {
 		position: relative;

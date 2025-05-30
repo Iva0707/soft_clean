@@ -1,73 +1,101 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  height: 100%; // was
-  scroll-behavior: smooth; // was
-  font-size: 62.5%;
+	height: 100%; // was
+	scroll-behavior: smooth; // was
+	font-size: 62.5%;
 }
 
 body {
-  font-size: 1.2rem;
-  font-family: $font;
-  line-height: 1.5;
-  color: $black_1;
+	font-size: 1.2rem;
+	font-family: $font;
+	line-height: 1.5;
+	color: $black_1;
 
-  // &.grid {
-  //   height: 100%;
-  //   display: grid;
-  //   grid-template-rows: auto 1fr auto;
-  //   grid-template-areas:
-  //     'header'
-  //     'main'
-  //     'footer';
+	// &.grid {
+	//   height: 100%;
+	//   display: grid;
+	//   grid-template-rows: auto 1fr auto;
+	//   grid-template-areas:
+	//     'header'
+	//     'main'
+	//     'footer';
 
-  //   .header {
-  //     grid-area: header;
-  //   }
+	//   .header {
+	//     grid-area: header;
+	//   }
 
-  //   .main {
-  //     grid-area: main;
-  //   }
+	//   .main {
+	//     grid-area: main;
+	//   }
 
-  //   .footer {
-  //     grid-area: footer;
-  //   }
-  // }
+	//   .footer {
+	//     grid-area: footer;
+	//   }
+	// }
 }
 
 section {
-  @media (min-width: 768px) {
-    padding-block: 5rem;
-  }
+	@media (min-width: 768px) {
+		padding-block: 5rem;
+	}
 
-  @media (max-width: 767px) {
-    padding-block: 3rem;
-  }
+	@media (max-width: 767px) {
+		padding-block: 3rem;
+	}
+}
+
+input {
+	padding-inline: 7.6rem;
+
+	color: $gray;
+
+	background: $white;
+
+	box-shadow: 0 3px 15px 0 rgba($black, 0.1);
+
+	border: 1px solid transparent;
+	border-radius: 10rem;
+
+	&:not([type="checkbox"]) {
+		min-height: 7rem;
+	}
+
+	&:hover,
+	&:focus-visible {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: $gray;
+	}
+
+	@extend .text--small;
 }
 
 img {
-  display: block; // was
-  user-select: none; // was
-  pointer-events: none; // was
+	display: block; // was
+	user-select: none; // was
+	pointer-events: none; // was
 }
 
 a:not(.button) {
-  color: inherit; // was
-  transition: 0.3s; // was
+	color: inherit; // was
+	transition: 0.3s; // was
 
-  &:hover {
-    text-decoration-color: transparent; // was
-    color: $yellow;
-  }
+	&:hover {
+		text-decoration-color: transparent; // was
+		color: $yellow;
+	}
 }
 
 b,
 strong {
-  font-weight: 800;
+	font-weight: 800;
 }
 
 // h1,
@@ -90,49 +118,117 @@ strong {
 
 h2,
 .h2 {
-  font-weight: 600;
+	font-weight: 600;
 
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
+	@media (min-width: 768px) {
+		font-size: 3rem;
+	}
 
-  @media (max-width: 767px) {
-    font-size: 2.4rem;
-  }
+	@media (max-width: 767px) {
+		font-size: 2.4rem;
+	}
 }
 
 h3,
 .h3 {
-  font-weight: 600;
+	font-weight: 600;
 
-  @media (min-width: 768px) {
-    font-size: 2.2rem;
-  }
+	@media (min-width: 768px) {
+		font-size: 2.2rem;
+	}
 
-  @media (max-width: 767px) {
-    font-size: 1.8rem;
-  }
+	@media (max-width: 767px) {
+		font-size: 1.8rem;
+	}
 }
 
 h4,
 .h4 {
-  font-weight: 800;
+	font-weight: 800;
 
-  @media (min-width: 768px) {
-    font-size: 1.8rem;
-  }
+	@media (min-width: 768px) {
+		font-size: 1.8rem;
+	}
 
-  @media (max-width: 767px) {
-    font-size: 1.6rem;
-  }
+	@media (max-width: 767px) {
+		font-size: 1.6rem;
+	}
 }
 
 h5,
 .h5 {
-  font-weight: 600;
-  font-size: 1.6rem;
+	font-weight: 600;
+	font-size: 1.6rem;
 }
 
 // h6,
 // .h6 {
 // }
+
+.text--small {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+// ___________
+
+.checkbox {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	cursor: pointer;
+
+	.checkbox__input {
+		position: absolute;
+		z-index: -1;
+
+		opacity: 0;
+	}
+
+	.checkbox__title {
+		position: relative;
+
+		padding-left: 32px;
+
+		font-size: 16px;
+		line-height: 1.4;
+
+		&::before,
+		&::after {
+			@include pseudo-y-center;
+		}
+
+		&::before {
+			width: 1.4rem;
+			height: 1.4rem;
+
+			border: 1px solid $yellow;
+			border-radius: 4px;
+
+			@include transition_background;
+		}
+
+		&::after {
+			left: 4px;
+
+			width: 1rem;
+			height: 1rem;
+
+			background: url(../images/svg/checkmark.svg) no-repeat;
+
+			opacity: 0;
+			@include transition_opacity;
+		}
+	}
+
+	.checkbox__input:checked + .checkbox__title::after {
+		opacity: 1;
+	}
+
+	.checkbox__input:checked + .checkbox__title::before {
+		background-color: $yellow;
+	}
+}

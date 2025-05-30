@@ -1,26 +1,71 @@
 // global
 @mixin image-cover {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  object-fit: cover;
+	object-fit: cover;
 }
 
 @mixin image-contain {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  object-fit: contain;
+	object-fit: contain;
 }
 
-@mixin centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+@mixin pseudo-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 
-  content: "";
-  transform: translate(-50%, -50%);
+	content: "";
+	transform: translate(-50%, -50%);
 }
+
+@mixin pseudo-y-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	content: "";
+	transform: translateY(-50%);
+}
+
+// transitions
+// @mixin transition_all {
+// 	transition: all 0.2s ease;
+// 	will-change: transform;
+// }
+
+@mixin transition_opacity {
+	transition: opacity 0.2s ease;
+	will-change: opacity;
+}
+
+@mixin transition_background {
+	transition: background 0.2s ease;
+	will-change: background;
+}
+
+// @mixin transition_color {
+// 	transition: color 0.2s ease;
+// 	will-change: color;
+// }
+
+// @mixin transition_color_background {
+// 	transition: color 0.2s ease, background 0.2s ease;
+// 	will-change: color, background;
+// }
+
+// @mixin transition_transform {
+// 	transition: transform 0.2s ease;
+// 	will-change: transform;
+// }
+
+// @mixin tranisition_fill {
+// 	transition: fill 0.2s ease;
+// 	will-change: fill;
+// }
 
 // @media (min-width: 480px) {
 // }
@@ -44,16 +89,18 @@
 
 //others
 @mixin card-style {
-  border-radius: 3rem;
+	background-color: $white;
 
-  box-shadow: 0 5px 20px 0 rgba($black, 0.1);
-  overflow: hidden;
+	border-radius: 3rem;
 
-  @media (min-width: 768px) {
-    padding: 3rem 3.5rem;
-  }
+	box-shadow: 0 5px 20px 0 rgba($black, 0.1);
+	overflow: hidden;
 
-  @media (max-width: 767px) {
-    padding: 1rem 1.5rem;
-  }
+	@media (min-width: 768px) {
+		padding: 3rem 3.5rem;
+	}
+
+	@media (max-width: 767px) {
+		padding: 1rem 1.5rem;
+	}
 }
