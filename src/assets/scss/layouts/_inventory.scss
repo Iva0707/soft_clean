@@ -24,12 +24,6 @@
 }
 
 .inventory__item {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	text-align: center;
-
 	&:nth-child(-n + 2) {
 		@media (min-width: 1025px) {
 			align-self: flex-end;
@@ -49,17 +43,23 @@
 	}
 }
 
-.inventory__item_image_wrapper {
+// inventory-item
+.inventory-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	text-align: center;
+}
+
+.inventory-item__image_wrapper {
 	display: block;
 
 	width: 100%;
-	aspect-ratio: 1;
 
 	background-color: $blue;
 
-	border-radius: 100%;
-
-	overflow: hidden;
+	@include image-round;
 
 	@media (min-width: 768px) {
 		max-width: 12.5rem;
@@ -69,7 +69,7 @@
 		max-width: 16rem;
 	}
 
-	.inventory__item--main & {
+	.inventory-item--main & {
 		position: relative;
 
 		max-width: 52rem;
@@ -82,7 +82,7 @@
 
 		&::after {
 			border: 1px solid $gray_1;
-			border-radius: 100%;
+			border-radius: 50%;
 
 			@include pseudo-center;
 
@@ -100,7 +100,7 @@
 		&::before {
 			background-color: $blue;
 
-			border-radius: 100%;
+			border-radius: 50%;
 
 			@include pseudo-center;
 
@@ -117,16 +117,16 @@
 	}
 }
 
-.inventory__item_image {
+.inventory-item__image {
 	object-position: top;
 
 	@include image-cover;
 
-	&.inventory__item_image--big {
+	&.inventory-item__image--big {
 		min-width: 130%;
 	}
 
-	.inventory__item--main & {
+	.inventory-item--main & {
 		position: relative;
 
 		object-position: 50% 50%;
@@ -136,7 +136,7 @@
 	}
 }
 
-.inventory__item_title {
+.inventory-item__title {
 	@extend h5;
 
 	&:not(:last-child) {
@@ -144,7 +144,7 @@
 	}
 }
 
-.inventory__item_form {
+.inventory-item__form {
 	position: relative;
 
 	display: flex;
@@ -167,6 +167,6 @@
 	}
 }
 
-.inventory__item_checkbox {
+.inventory-item__checkbox {
 	color: $gray;
 }

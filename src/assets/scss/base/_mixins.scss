@@ -13,6 +13,13 @@
 	object-fit: contain;
 }
 
+@mixin image-round {
+	border-radius: 50%;
+
+	aspect-ratio: 1;
+	overflow: hidden;
+}
+
 @mixin pseudo-center {
 	position: absolute;
 	top: 50%;
@@ -32,11 +39,6 @@
 }
 
 // transitions
-// @mixin transition_all {
-// 	transition: all 0.2s ease;
-// 	will-change: transform;
-// }
-
 @mixin transition_opacity {
 	transition: opacity 0.2s ease;
 	will-change: opacity;
@@ -46,6 +48,11 @@
 	transition: background 0.2s ease;
 	will-change: background;
 }
+
+// @mixin transition_all {
+// 	transition: all 0.2s ease;
+// 	will-change: transform;
+// }
 
 // @mixin transition_color {
 // 	transition: color 0.2s ease;
@@ -71,7 +78,7 @@
 @mixin card-style {
 	background-color: $white;
 
-	border-radius: 3rem;
+	border-radius: $border-30;
 
 	box-shadow: 0 5px 20px 0 rgba($black, 0.1);
 	overflow: hidden;

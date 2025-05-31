@@ -1,0 +1,54 @@
+.additional-services__content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.additional-services__item {
+	@media (min-width: 768px) {
+		flex: 1 0 32rem;
+	}
+
+	@media (max-width: 767px) {
+		flex: 1 0 26rem;
+	}
+}
+
+// additional-services-item
+.additional-services-item {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+
+	height: 100%;
+
+	@include card-style;
+}
+
+.additional-services-item__image_wrapp {
+	flex-shrink: 0;
+
+	width: 100%;
+	max-width: 7.5rem;
+
+	@include image-round;
+}
+
+.additional-services-item__info {
+	@extend .text--small;
+
+	span {
+		display: block;
+	}
+}
+
+.additional-services-item__name {
+	&:not(:last-child) {
+		margin-bottom: 4px;
+	}
+}
+
+.additional-services-item__price {
+	font-weight: 800;
+	color: $blue;
+}

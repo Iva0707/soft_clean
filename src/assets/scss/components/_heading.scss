@@ -23,7 +23,7 @@
 
 	background: $yellow;
 
-	border-radius: 3rem;
+	border-radius: $border-30;
 
 	&:not(:last-child) {
 		margin-bottom: 2rem;

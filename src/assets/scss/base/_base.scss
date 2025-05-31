@@ -57,6 +57,9 @@ img {
 
 a:not(.button) {
 	color: inherit; // was
+
+	text-underline-offset: 4px;
+
 	transition: 0.3s; // was
 
 	&:hover {
@@ -155,7 +158,7 @@ input {
 	box-shadow: 0 3px 15px 0 rgba($black, 0.1);
 
 	border: 1px solid transparent;
-	border-radius: 10rem;
+	border-radius: $border-100;
 
 	&:not([type="checkbox"]) {
 		@media (min-width: 768px) {
@@ -251,3 +254,10 @@ input {
 // 1. Валидация форм
 // 2. Клики по табу
 // 3. Семантика
+
+// .curved-section {
+// 	border-bottom-left-radius: 50% 10%;
+// 	border-bottom-right-radius: 50% 10%;
+// 	border-top-left-radius: 50% 10%;
+// 	border-top-right-radius: 50% 10%;
+// }
