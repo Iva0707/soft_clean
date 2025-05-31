@@ -1,49 +1,75 @@
 .button {
-  display: inline-flex;
-  align-items: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 
-  min-height: 8rem;
-  padding-inline: 2.2rem;
+	padding-inline: 2.2rem;
 
-  font-family: $font;
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-align: center;
-  color: $white;
+	font-family: $font;
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-align: center;
+	color: $white;
 
-  background: transparent;
+	background: transparent;
 
-  border: 1px solid transparent;
-  border-radius: 10rem;
+	border: 1px solid transparent;
+	border-radius: 10rem;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  &.button_blue {
-    background: $blue;
+	@media (min-width: 768px) {
+		min-height: 7rem;
+	}
 
-    box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($blue, 0.6);
-  }
+	@media (max-width: 767px) {
+		min-height: 5rem;
+	}
 
-  &.button_yellow {
-    background: $yellow;
+	&.button--blue {
+		background: $blue;
 
-    box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($yellow, 0.6);
-  }
+		box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($blue, 0.6);
+	}
 
-  &.button_overline {
-    min-height: 5.5rem;
+	&.button--yellow {
+		background: $yellow;
 
-    color: $black_1;
+		box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($yellow, 0.6);
+	}
 
-    border-color: $blue;
-  }
+	&.button--overline {
+		color: $black_1;
 
-  &.button_basic {
-    min-height: 5.5rem;
+		border-color: $blue;
+	}
 
-    color: $blue;
-  }
+	&.button--basic {
+		min-height: fit-content;
+
+		color: $blue;
+	}
+
+	&.button--small {
+		@media (min-width: 768px) {
+			min-height: 5.5rem;
+		}
+
+		@media (max-width: 767px) {
+			min-height: 4.5rem;
+		}
+	}
+
+	&.button--big {
+		@media (min-width: 768px) {
+			min-height: 8rem;
+		}
+
+		@media (max-width: 767px) {
+			min-height: 6rem;
+		}
+	}
 }

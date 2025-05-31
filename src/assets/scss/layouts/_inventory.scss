@@ -1,12 +1,26 @@
 .inventory__content {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
 	grid-auto-flow: row;
-	align-items: center;
-	gap: 4rem;
 
 	width: 100%;
+
+	@media (min-width: 1025px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@media (max-width: 1024px) and (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: 768px) {
+		gap: 4rem;
+	}
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+		gap: 2.6rem;
+	}
 }
 
 .inventory__item {
@@ -16,9 +30,22 @@
 
 	text-align: center;
 
+	&:nth-child(-n + 2) {
+		@media (min-width: 1025px) {
+			align-self: flex-end;
+		}
+	}
+
 	&.inventory__item--main {
-		grid-row: 1 / span 2;
-		grid-column: 2 / 4;
+		@media (min-width: 1025px) {
+			grid-row: 1 / span 2;
+			grid-column: 2 / 4;
+		}
+
+		@media (max-width: 1024px) and (min-width: 768px) {
+			grid-column: span 2;
+			align-self: end;
+		}
 	}
 }
 
@@ -26,7 +53,6 @@
 	display: block;
 
 	width: 100%;
-	max-width: 12.5rem;
 	aspect-ratio: 1;
 
 	background-color: $blue;
@@ -34,6 +60,14 @@
 	border-radius: 100%;
 
 	overflow: hidden;
+
+	@media (min-width: 768px) {
+		max-width: 12.5rem;
+	}
+
+	@media (max-width: 767px) {
+		max-width: 16rem;
+	}
 
 	.inventory__item--main & {
 		position: relative;
@@ -47,24 +81,38 @@
 		overflow: visible;
 
 		&::after {
-			width: calc(100% - 3.5rem);
-			height: calc(100% - 3.5rem);
-
 			border: 1px solid $gray_1;
 			border-radius: 100%;
 
 			@include pseudo-center;
+
+			@media (min-width: 768px) {
+				width: calc(100% - 3.5rem);
+				height: calc(100% - 3.5rem);
+			}
+
+			@media (max-width: 767px) {
+				width: calc(100% - 1.5rem);
+				height: calc(100% - 1.5rem);
+			}
 		}
 
 		&::before {
-			width: calc(100% - 7rem);
-			height: calc(100% - 7rem);
-
 			background-color: $blue;
 
 			border-radius: 100%;
 
 			@include pseudo-center;
+
+			@media (min-width: 768px) {
+				width: calc(100% - 7rem);
+				height: calc(100% - 7rem);
+			}
+
+			@media (max-width: 767px) {
+				width: calc(100% - 3rem);
+				height: calc(100% - 3rem);
+			}
 		}
 	}
 }
@@ -90,4 +138,35 @@
 
 .inventory__item_title {
 	@extend h5;
+
+	&:not(:last-child) {
+		margin-bottom: 0.6rem;
+	}
+}
+
+.inventory__item_form {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	margin-bottom: -9rem;
+
+	transform: translateY(-9rem);
+	z-index: 1;
+
+	@media (min-width: 768px) {
+		gap: 1.5rem;
+
+		max-width: 27.5rem;
+	}
+
+	@media (max-width: 767px) {
+		gap: 1rem;
+	}
+}
+
+.inventory__item_checkbox {
+	color: $gray;
 }

@@ -82,13 +82,25 @@
 
 .card__title {
 	&:not(:last-child) {
-		margin-bottom: 1rem;
+		@media (min-width: 768px) {
+			margin-bottom: 1rem;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 0.6rem;
+		}
 	}
 }
 
 .card__text {
 	&:not(:last-child) {
-		margin-bottom: 1rem;
+		@media (min-width: 768px) {
+			margin-bottom: 1rem;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 0.6rem;
+		}
 	}
 
 	& p:not(:last-child) {
@@ -98,6 +110,12 @@
 
 .card__link {
 	&:not(:last-child) {
-		margin-bottom: 1rem;
+		@media (min-width: 768px) {
+			margin-bottom: 1rem;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 0.6rem;
+		}
 	}
 }
