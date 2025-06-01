@@ -143,6 +143,7 @@ html {
     height: 100%;
     scroll-behavior: smooth;
     font-size: 62.5%;
+    padding-top: 300px;
 }
 
 body {
@@ -165,16 +166,50 @@ body {
 }
 
 @media (min-width: 768px) {
-    section.section--curved_out_top {
+    section.section--curved_out_top, section.section--curved_in_bottom {
         position: relative;
+    }
+
+    section.section--curved_out_top::before, section.section--curved_in_bottom::before {
+        height: 32%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        content: "";
+    }
+}
+
+@media (min-width: 768px) {
+    section.section--curved_out_top {
         padding-top: 20rem;
     }
 
     section.section--curved_out_top::before {
-        height: 32%;
-        background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
-        position: absolute;
         top: 0;
+        background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
+    }
+}
+
+@media (min-width: 768px) {
+    section.section--curved_in_bottom {
+        margin-bottom: 12rem;
+    }
+
+    section.section--curved_in_bottom::before {
+        top: 100%;
+        background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
+    }
+}
+
+@media (min-width: 768px) {
+    section.section--curved_out_bottom, section.section--curved_in_top {
+        position: relative;
+    }
+
+    section.section--curved_out_bottom::after, section.section--curved_in_top::after {
+        height: 32%;
+        transform: rotate(180deg);
+        position: absolute;
         left: 0;
         right: 0;
         content: "";
@@ -183,54 +218,24 @@ body {
 
 @media (min-width: 768px) {
     section.section--curved_out_bottom {
-        position: relative;
         padding-bottom: 20rem;
     }
 
     section.section--curved_out_bottom::after {
-        height: 32%;
-        background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
-        transform: rotate(180deg);
-        position: absolute;
         bottom: 0;
-        left: 0;
-        right: 0;
-        content: "";
+        background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
     }
 }
 
 @media (min-width: 768px) {
     section.section--curved_in_top {
         position: relative;
-        padding-top: 20rem;
+        margin-top: 12rem;
     }
 
-    section.section--curved_in_top::before {
-        height: 32%;
-        background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
-        transform: rotate(180deg);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        content: "";
-    }
-}
-
-@media (min-width: 768px) {
-    section.section--curved_in_bottom {
-        position: relative;
-        padding-bottom: 20rem;
-    }
-
-    section.section--curved_in_bottom::after {
-        height: 32%;
+    section.section--curved_in_top::after {
+        bottom: 100%;
         background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: "";
     }
 }
 
@@ -1381,6 +1386,10 @@ input::placeholder {
 
 .gift-item__button.button--overline {
     color: #43aaff;
+}
+
+.calculation {
+    background: url("../images/dev/calculation/image_1.jpg") center/cover no-repeat;
 }
 
 @media (min-width: 768px) {

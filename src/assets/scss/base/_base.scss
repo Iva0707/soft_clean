@@ -8,6 +8,8 @@ html {
 	height: 100%; // was
 	scroll-behavior: smooth; // was
 	font-size: 62.5%;
+
+	padding-top: 300px;
 }
 
 body {
@@ -48,34 +50,78 @@ section {
 		padding-block: 5rem;
 	}
 
-	&.section--curved_out_top {
+	&.section--curved_out_top,
+	&.section--curved_in_bottom {
 		@media (min-width: 768px) {
 			position: relative;
 
+			&::before {
+				height: 32%;
+
+				position: absolute;
+				left: 0;
+				right: 0;
+
+				content: "";
+			}
+		}
+	}
+
+	&.section--curved_out_top {
+		@media (min-width: 768px) {
 			padding-top: 20rem;
 
 			&::before {
-				height: 32%;
-				background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
+				top: 0;
 
-				@include pseudo-top;
+				background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
+			}
+		}
+	}
+
+	&.section--curved_in_bottom {
+		@media (min-width: 768px) {
+			margin-bottom: 12rem;
+
+			&::before {
+				top: 100%;
+
+				background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
+			}
+
+			// & + section {
+			// 	padding-top: 20rem;
+			// }
+		}
+	}
+
+	&.section--curved_out_bottom,
+	&.section--curved_in_top {
+		@media (min-width: 768px) {
+			position: relative;
+
+			&::after {
+				height: 32%;
+
+				transform: rotate(180deg);
+
+				position: absolute;
+				left: 0;
+				right: 0;
+
+				content: "";
 			}
 		}
 	}
 
 	&.section--curved_out_bottom {
 		@media (min-width: 768px) {
-			position: relative;
-
 			padding-bottom: 20rem;
 
 			&::after {
-				height: 32%;
+				bottom: 0;
+
 				background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
-
-				transform: rotate(180deg);
-
-				@include pseudo-bottom;
 			}
 		}
 	}
@@ -84,31 +130,17 @@ section {
 		@media (min-width: 768px) {
 			position: relative;
 
-			padding-top: 20rem;
-
-			&::before {
-				height: 32%;
-				background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
-
-				transform: rotate(180deg);
-
-				@include pseudo-top;
-			}
-		}
-	}
-
-	&.section--curved_in_bottom {
-		@media (min-width: 768px) {
-			position: relative;
-
-			padding-bottom: 20rem;
+			margin-top: 12rem;
 
 			&::after {
-				height: 32%;
-				background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
+				bottom: 100%;
 
-				@include pseudo-bottom;
+				background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
 			}
+
+			// & + section {
+			// 	padding-bottom: 20rem;
+			// }
 		}
 	}
 }
