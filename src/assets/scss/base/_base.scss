@@ -41,11 +41,75 @@ body {
 
 section {
 	@media (min-width: 768px) {
-		padding-block: 5rem;
+		padding-block: 8rem;
 	}
 
 	@media (max-width: 767px) {
-		padding-block: 3rem;
+		padding-block: 5rem;
+	}
+
+	&.section--curved_out_top {
+		@media (min-width: 768px) {
+			position: relative;
+
+			padding-top: 20rem;
+
+			&::before {
+				height: 32%;
+				background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
+
+				@include pseudo-top;
+			}
+		}
+	}
+
+	&.section--curved_out_bottom {
+		@media (min-width: 768px) {
+			position: relative;
+
+			padding-bottom: 20rem;
+
+			&::after {
+				height: 32%;
+				background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
+
+				transform: rotate(180deg);
+
+				@include pseudo-bottom;
+			}
+		}
+	}
+
+	&.section--curved_in_top {
+		@media (min-width: 768px) {
+			position: relative;
+
+			padding-top: 20rem;
+
+			&::before {
+				height: 32%;
+				background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
+
+				transform: rotate(180deg);
+
+				@include pseudo-top;
+			}
+		}
+	}
+
+	&.section--curved_in_bottom {
+		@media (min-width: 768px) {
+			position: relative;
+
+			padding-bottom: 20rem;
+
+			&::after {
+				height: 32%;
+				background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
+
+				@include pseudo-bottom;
+			}
+		}
 	}
 }
 
@@ -254,10 +318,6 @@ input {
 // 1. Валидация форм
 // 2. Клики по табу
 // 3. Семантика
-
-// .curved-section {
-// 	border-bottom-left-radius: 50% 10%;
-// 	border-bottom-right-radius: 50% 10%;
-// 	border-top-left-radius: 50% 10%;
-// 	border-top-right-radius: 50% 10%;
-// }
+// 4. Выделение цветом
+// 5. Политика
+// 6. Возможно смена языка

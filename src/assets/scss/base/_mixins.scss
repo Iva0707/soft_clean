@@ -38,6 +38,24 @@
 	transform: translateY(-50%);
 }
 
+@mixin pseudo-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	content: "";
+}
+
+@mixin pseudo-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	content: "";
+}
+
 // transitions
 @mixin transition_opacity {
 	transition: opacity 0.2s ease;

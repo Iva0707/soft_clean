@@ -13,6 +13,16 @@
 	&:not(:last-child) {
 		margin-bottom: 3rem;
 	}
+
+	&.heading--left {
+		@media (min-width: 768px) {
+			text-align: left;
+		}
+	}
+
+	&.heading--white {
+		color: $white;
+	}
 }
 
 .heading__label {
