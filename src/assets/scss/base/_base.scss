@@ -8,8 +8,6 @@ html {
 	height: 100%; // was
 	scroll-behavior: smooth; // was
 	font-size: 62.5%;
-
-	padding-top: 300px;
 }
 
 body {
@@ -81,17 +79,15 @@ section {
 
 	&.section--curved_in_bottom {
 		@media (min-width: 768px) {
-			margin-bottom: 12rem;
-
 			&::before {
 				top: 100%;
 
 				background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
 			}
 
-			// & + section {
-			// 	padding-top: 20rem;
-			// }
+			& + section {
+				padding-top: 20rem;
+			}
 		}
 	}
 
@@ -129,8 +125,6 @@ section {
 	&.section--curved_in_top {
 		@media (min-width: 768px) {
 			position: relative;
-
-			margin-top: 12rem;
 
 			&::after {
 				bottom: 100%;
@@ -353,3 +347,4 @@ input {
 // 4. Выделение цветом
 // 5. Политика
 // 6. Возможно смена языка
+// 7. Попробовать закрепить навигацию

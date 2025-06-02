@@ -59,7 +59,9 @@
 .heading__subtitle {
 	color: $gray;
 
-	@media (min-width: 768px) {
-		max-width: 90%;
+	&:not(.heading__subtitle--full) {
+		@media (min-width: 768px) {
+			max-width: 90%;
+		}
 	}
 }

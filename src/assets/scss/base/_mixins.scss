@@ -38,6 +38,14 @@
 	transform: translateY(-50%);
 }
 
+@mixin pseudo-left-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	content: "";
+}
+
 // transitions
 @mixin transition_opacity {
 	transition: opacity 0.2s ease;
@@ -88,6 +96,6 @@
 	}
 
 	@media (max-width: 767px) {
-		padding: 1rem 1.5rem;
+		padding: 2rem 3rem;
 	}
 }

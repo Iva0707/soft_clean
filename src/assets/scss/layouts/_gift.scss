@@ -20,22 +20,24 @@
 	}
 }
 
-.gift__item {
-	&:not(:last-child) {
-		margin-bottom: 1rem;
+.gift__column {
+	&.gift__column--image {
+		@media (min-width: 768px) {
+			align-self: flex-end;
+
+			max-width: 50rem;
+			margin-bottom: 6rem;
+		}
+
+		@media (max-width: 767px) {
+			max-width: 36rem;
+		}
 	}
 }
 
-.gift__column--image {
-	@media (min-width: 768px) {
-		align-self: flex-end;
-
-		max-width: 50rem;
-		margin-bottom: 6rem;
-	}
-
-	@media (max-width: 767px) {
-		max-width: 36rem;
+.gift__item {
+	&:not(:last-child) {
+		margin-bottom: 1rem;
 	}
 }
 

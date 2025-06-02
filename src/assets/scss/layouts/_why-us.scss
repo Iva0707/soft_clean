@@ -1,0 +1,29 @@
+.why-us__list {
+	&:nth-clild(odd) {
+		background-color: $blue;
+	}
+}
+
+.why-us-item {
+	border-radius: $border-30;
+
+	overflow: hidden;
+
+	@media (min-width: 768px) {
+		padding: 3rem 2.5rem;
+	}
+
+	@media (max-width: 767px) {
+		padding: 2rem 3rem;
+	}
+}
+
+.why-us__item {
+	&:nth-child(odd) {
+		background-color: $blue;
+	}
+
+	&:nth-child(even) {
+		background-color: $yellow;
+	}
+}
