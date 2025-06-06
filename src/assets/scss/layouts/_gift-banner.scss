@@ -1,0 +1,66 @@
+.gift-banner__row {
+	display: flex;
+	align-items: center;
+
+	@include card-style;
+
+	@media (min-width: 768px) {
+		gap: 4rem;
+	}
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
+
+.gift-banner__column {
+	&.gift-banner__column--text {
+		@media (min-width: 768px) {
+			flex: 0 0 50%;
+		}
+	}
+
+	&.gift-banner__column--image {
+		@media (min-width: 1025px) {
+			margin: -9.5rem -9.5rem -6.5rem auto;
+		}
+
+		@media (max-width: 1024px) and (min-width: 768px) {
+			margin: -3rem -3.5rem -3rem auto;
+		}
+
+		@media (min-width: 768px) {
+			flex: 0 1 50%;
+		}
+	}
+}
+
+.gift-banner__text {
+	display: inline-block;
+
+	font-size: 2rem;
+	font-weight: 600;
+
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	strong {
+		color: $blue;
+	}
+}
+
+.gift-banner__button {
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.gift-banner__image {
+	@include image-contain;
+}
