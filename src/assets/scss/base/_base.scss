@@ -48,12 +48,16 @@ section {
 		padding-block: 5rem;
 	}
 
-	&.section--curved_out_top,
-	&.section--curved_in_bottom {
+	&.section--curved_out_top {
 		@media (min-width: 768px) {
 			position: relative;
+			padding-top: 20rem;
 
 			&::before {
+				top: 0;
+
+				background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
+
 				height: 32%;
 
 				position: absolute;
@@ -65,38 +69,17 @@ section {
 		}
 	}
 
-	&.section--curved_out_top {
-		@media (min-width: 768px) {
-			padding-top: 20rem;
-
-			&::before {
-				top: 0;
-
-				background: url("../images/dev/dev/bg_deco_out.png") top/cover no-repeat;
-			}
-		}
-	}
-
-	&.section--curved_in_bottom {
-		@media (min-width: 768px) {
-			&::before {
-				top: 100%;
-
-				background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
-			}
-
-			& + section {
-				padding-top: 20rem;
-			}
-		}
-	}
-
-	&.section--curved_out_bottom,
-	&.section--curved_in_top {
+	&.section--curved_out_bottom {
 		@media (min-width: 768px) {
 			position: relative;
 
+			padding-bottom: 20rem;
+
 			&::after {
+				bottom: 0;
+
+				background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
+
 				height: 32%;
 
 				transform: rotate(180deg);
@@ -110,33 +93,76 @@ section {
 		}
 	}
 
-	&.section--curved_out_bottom {
-		@media (min-width: 768px) {
-			padding-bottom: 20rem;
+	// &.section--curved_in_bottom {
+	// 	@media (min-width: 768px) {
+	// 		position: relative;
+	// 		&::before {
+	// 			top: 100%;
 
-			&::after {
-				bottom: 0;
+	// 			background: url("../images/dev/dev/bg_deco_in.png") top/cover no-repeat;
 
-				background: url("../images/dev/dev/bg_deco_out.png") bottom/cover no-repeat;
-			}
-		}
+	// 			height: 32%;
+
+	// 			position: absolute;
+	// 			left: 0;
+	// 			right: 0;
+
+	// 			content: "";
+	// 		}
+	// 	}
+	// }
+
+	// &.section--curved_in_top {
+	// 	@media (min-width: 768px) {
+	// 		position: relative;
+
+	// 		&::after {
+	// 			bottom: 100%;
+
+	// 			background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
+
+	// 			height: 32%;
+
+	// 			transform: rotate(180deg);
+
+	// 			position: absolute;
+	// 			left: 0;
+	// 			right: 0;
+
+	// 			content: "";
+	// 		}
+	// 	}
+	// }
+}
+
+.deco {
+	display: flex;
+
+	&.deco--curved_in_bottom {
+		transform: rotate(180deg);
 	}
+}
 
-	&.section--curved_in_top {
-		@media (min-width: 768px) {
-			position: relative;
+.curved-section {
+	background: #f2f9ff;
+	position: relative;
+	padding-top: 80px; /* Отступ, чтобы "волна" не закрыла контент */
+}
 
-			&::after {
-				bottom: 100%;
+.curved-section::before {
+	content: "";
+	// display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw; /* Растягивается на ширину окна */
+	height: 80px;
 
-				background: url("../images/dev/dev/bg_deco_in.png") bottom/cover no-repeat;
-			}
-
-			// & + section {
-			// 	padding-bottom: 20rem;
-			// }
-		}
-	}
+	background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1914 80' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M1 1.46839C752.06 105.316 1170.71 105.705 1913 1.46839H1Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A")
+		no-repeat top center;
+	background-size: 100% 100%;
+	// background-size: cover; /* Можно использовать '100% 100%' для точного соответствия */
+	z-index: 1;
 }
 
 img {
