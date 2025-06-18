@@ -2126,6 +2126,36 @@ input::placeholder {
     object-fit: contain;
 }
 
+.accordion__item {
+    font-size: 1.4rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.accordion__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.accordion__trigger {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 1.4rem;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-align: left;
+    color: #4b5258;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.accordion__text {
+    padding: 0 30px 30px;
+}
+
 @media (min-width: 768px) {
     .footer {
         padding-block: 4rem;
