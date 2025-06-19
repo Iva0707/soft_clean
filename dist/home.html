@@ -736,34 +736,85 @@
 			</div>
 		</section>
 		
-		<section class="questions">
+		<section class="section accordion js-accordion">
 			<div class="container">
 				<div class="wrapper">
 					<div class="heading">
 						<h2 class="heading__title">Поширені запитання</h2>
 					</div>
-					<ul data-spollers data-one-spoller class="questions__accordion accordion">
-						<li class="accordion__item">
-							<button tabindex="-1" type="button" data-spoller class="accordion__trigger">Що потрібно, щоб підготуватися до прибирання?</button>
-							<div class="accordion__text">
-								Ми беремо з собою всі необхідні засоби для прибирання. Від вас потрібно лише забезпечити доступ до приміщення та, за можливості, прибрати особисті речі з поверхонь, щоб ми могли ефективніше провести прибирання.
+					<ul class="accordion__list">
+						<li class="accordion__item accordion__item--active_state">
+							<button type="button" class="accordion__trigger js-accordion__trigger">
+								<span class="accordion__trigger_text">Що потрібно, щоб підготуватися до прибирання?</span>
+								<span class="accordion__trigger_icon"></span>
+							</button>
+							<div class="accordion__body">
+								<div class="accordion__content">
+									<p>
+										Для якісного прибирання ми самостійно привозимо весь необхідний інвентар, професійні миючі та дезінфікуючі засоби. Від вас необхідно лише забезпечити доступ до приміщення у призначений час. Також просимо, за можливості, прибрати
+										особисті речі з робочих поверхонь, підлоги або інших зон, які потребують прибирання. Це дозволить нам максимально ефективно виконати роботу та не турбувати ваші особисті речі. Якщо є специфічні побажання — наприклад, не рухати деякі
+										речі або використати певні засоби — обов'язково попередьте нас заздалегідь.
+									</p>
+								</div>
 							</div>
 						</li>
 						<li class="accordion__item">
-							<button tabindex="-1" type="button" data-spoller class="accordion__trigger">Чи можу я бути вдома під час прибирання?</button>
-							<div class="accordion__text">Так, ви можете залишатися вдома під час прибирання. Якщо вам зручніше — ви можете залишити приміщення на час роботи наших спеціалістів. В будь-якому випадку ми працюємо акуратно та дбайливо.</div>
+							<button type="button" class="accordion__trigger js-accordion__trigger">
+								<span class="accordion__trigger_text">Чи можу я бути вдома під час прибирання?</span>
+								<span class="accordion__trigger_icon"></span>
+							</button>
+							<div class="accordion__body">
+								<div class="accordion__content">
+									<p>
+										Звісно, ви можете перебувати вдома під час прибирання, якщо вам так зручніше. Наші спеціалісти працюють максимально обережно, поважно ставляться до вашого простору та приватності. Якщо ж вам комфортніше залишити приміщення — ми
+										самостійно впораємося з усіма завданнями, а по завершенню роботи повідомимо про готовність. Ви завжди можете обрати той варіант, який буде найбільш зручним саме для вас.
+									</p>
+								</div>
+							</div>
 						</li>
 						<li class="accordion__item">
-							<button tabindex="-1" type="button" data-spoller class="accordion__trigger">Скільки часу триває прибирання?</button>
-							<div class="accordion__text">Час прибирання залежить від площі та стану приміщення. Зазвичай стандартне прибирання квартири займає від 2 до 4 годин. Після оформлення замовлення ми узгодимо з вами орієнтовний час.</div>
+							<button type="button" class="accordion__trigger js-accordion__trigger">
+								<span class="accordion__trigger_text">Скільки часу триває прибирання?</span>
+								<span class="accordion__trigger_icon"></span>
+							</button>
+							<div class="accordion__body">
+								<div class="accordion__content">
+									<p>
+										Тривалість прибирання залежить від розміру приміщення, його стану та обраного пакету послуг. Наприклад, стандартне прибирання однокімнатної квартири зазвичай займає 2–3 години. Генеральне або післяремонтне прибирання може тривати
+										довше — до 4–6 годин або більше. Після оформлення замовлення ми завжди попередньо оцінюємо об’єм робіт та погоджуємо з вами орієнтовний час виконання. У разі потреби можемо організувати прибирання декількома спеціалістами для
+										прискорення процесу.
+									</p>
+								</div>
+							</div>
 						</li>
 						<li class="accordion__item">
-							<button tabindex="-1" type="button" data-spoller class="accordion__trigger">За скільки днів до приїзду клінерів необхідно зробити замовлення?</button>
-							<div class="accordion__text">Рекомендуємо бронювати послугу мінімум за 1-2 дні до бажаної дати. У деяких випадках ми можемо запропонувати терміновий виїзд у день звернення.</div>
+							<button type="button" class="accordion__trigger js-accordion__trigger">
+								<span class="accordion__trigger_text">За скільки днів до приїзду клінерів необхідно зробити замовлення?</span>
+								<span class="accordion__trigger_icon"></span>
+							</button>
+							<div class="accordion__body">
+								<div class="accordion__content">
+									<p>
+										Для зручного планування графіку ми рекомендуємо оформлювати замовлення за 1–2 дні до бажаної дати. Це дозволяє нам гарантовано забронювати зручний для вас час та підготувати необхідне обладнання. У разі термінової потреби ми також
+										намагаємось знайти можливість для швидкого виїзду вже в день звернення, залежно від завантаженості команди. Чим раніше ви зробите замовлення — тим більше можливостей підібрати оптимальний час для вас.
+									</p>
+								</div>
+							</div>
 						</li>
 						<li class="accordion__item">
-							<button tabindex="-1" type="button" data-spoller class="accordion__trigger">Які миючі засоби ви використовуєте?</button>
-							<div class="accordion__text">Ми використовуємо безпечні та ефективні миючі засоби, що не шкодять здоров’ю та навколишньому середовищу. Якщо у вас є особливі побажання щодо використання певних засобів — повідомте нас заздалегідь.</div>
+							<button type="button" class="accordion__trigger js-accordion__trigger">
+								<span class="accordion__trigger_text">Які миючі засоби ви використовуєте?</span>
+								<span class="accordion__trigger_icon"></span>
+							</button>
+							<div class="accordion__body">
+								<div class="accordion__content">
+									<p>
+										Ми використовуємо сертифіковані, безпечні та екологічні миючі засоби, які ефективно справляються з забрудненнями та не завдають шкоди вашому здоров’ю, дітям, домашнім улюбленцям чи навколишньому середовищу. За необхідності
+										застосовуємо спеціалізовані професійні засоби для складних плям чи специфічних поверхонь. Якщо у вас є алергії, чутливість до запахів або інші особливі побажання — будь ласка, повідомте нас заздалегідь, і ми врахуємо ваші потреби при
+										підготовці до прибирання.
+									</p>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</div>
