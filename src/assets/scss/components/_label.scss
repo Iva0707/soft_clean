@@ -39,13 +39,40 @@
 	border-radius: 50%;
 
 	box-shadow: 0 2px 4px 0px $blue;
-	transform: translateX(-50%);
+	transform: translate(-50%, 0);
+
+	&.label__dot--left {
+		top: 50%;
+		left: -1rem;
+
+		transform: translate(0, -50%);
+	}
+
+	&.label__dot--right {
+		top: 50%;
+		left: calc(100% - 1rem);
+
+		transform: translate(0, -50%);
+	}
+
+	&.label__dot--bottom {
+		top: calc(100% - 1rem);
+		left: 50%;
+
+		transform: translate(-50%, 0);
+	}
 }
 
 .label__text {
 	text-align: center;
 	font-weight: 600;
 	font-size: 1.4rem;
+
+	&.label__text--presentation {
+		text-align: left;
+		font-weight: 400;
+		font-size: 1.2rem;
+	}
 
 	& strong {
 		font-weight: inherit;

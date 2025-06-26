@@ -142,7 +142,7 @@
 // 		return _slideUp(target, duration);
 // 	}
 // };
-// ________________________________
+// ____________ accordion ____________________
 
 const accordion = ({ triggers, activeStateName, allowMultiple = false }) => {
 	if (!triggers?.length) return;
@@ -201,6 +201,56 @@ document.addEventListener("DOMContentLoaded", () => {
 			triggers: $triggers,
 			activeStateName: CLASSNAMES.activeItem,
 			allowMultiple: false,
+		});
+	});
+});
+
+// ____________ tabs ____________________
+
+const tabs = ({ triggers, contents }) => {
+	if (!triggers?.length || !contents?.length) return;
+
+	const activateTab = ($trigger) => {
+		const tabId = $trigger.getAttribute("data-tab");
+		if (!tabId) return;
+
+		triggers.forEach(($el) => $el.removeAttribute("data-active"));
+		contents.forEach(($el) => {
+			$el.removeAttribute("data-active");
+			$el.setAttribute("aria-expanded", "false");
+		});
+
+		$trigger.setAttribute("data-active", "");
+
+		const $targetContent = [...contents].find(($el) => $el.getAttribute("data-tab") === tabId);
+		if ($targetContent) {
+			$targetContent.setAttribute("data-active", "");
+			$targetContent.setAttribute("aria-expanded", "true");
+		}
+	};
+
+	triggers.forEach(($trigger) => {
+		$trigger.addEventListener("click", (e) => {
+			e.preventDefault();
+			activateTab($trigger);
+		});
+	});
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	const SELECTORS = {
+		wrapper: ".js-tabs",
+		trigger: ".js-tabs-trigger",
+		content: ".js-tabs-body [data-tab]",
+	};
+
+	document.querySelectorAll(SELECTORS.wrapper).forEach(($wrapper) => {
+		const $triggers = $wrapper.querySelectorAll(SELECTORS.trigger);
+		const $contents = $wrapper.querySelectorAll(SELECTORS.content);
+
+		tabs({
+			triggers: $triggers,
+			contents: $contents,
 		});
 	});
 });

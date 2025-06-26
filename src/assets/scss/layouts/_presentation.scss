@@ -1,0 +1,140 @@
+.presentation {
+	background-color: $blue_1;
+}
+
+.presentation__nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	width: fit-content;
+	margin-inline: auto;
+
+	background-color: $white;
+
+	border-radius: 10rem;
+
+	box-shadow: 0 0 20px 0 rgba($black, 0.12);
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.presentation__nav_btn {
+	color: $black_1;
+
+	&[data-active] {
+		color: $white;
+		background-color: $yellow;
+	}
+}
+
+.presentation__tabs_item {
+	display: none;
+
+	&[data-active] {
+		display: block;
+	}
+}
+
+.presentation__tabs_block {
+	position: relative;
+
+	max-width: 100%;
+	width: 100%;
+
+	aspect-ratio: 16/9;
+
+	border-radius: 3rem;
+
+	overflow: hidden;
+}
+
+.presentation__tabs_image {
+	display: block;
+
+	@include image-cover;
+}
+
+.presentation__tabs_label--1 {
+	top: 10%;
+	left: 16%;
+}
+
+.presentation__tabs_label--2 {
+	bottom: 48%;
+	left: 7%;
+}
+
+.presentation__tabs_label--3 {
+	bottom: 12%;
+	left: 7%;
+}
+
+.presentation__tabs_label--4 {
+	bottom: 3%;
+	left: 27%;
+}
+
+.presentation__tabs_label--5 {
+	bottom: 38%;
+	left: 41%;
+}
+
+.presentation__tabs_label--6 {
+	top: 14%;
+	right: 5%;
+}
+
+.presentation__tabs_label--7 {
+	top: 31%;
+	right: 24%;
+}
+
+.presentation__tabs_label--8 {
+	bottom: 25%;
+	right: 4%;
+}
+
+.presentation__tabs_label--9 {
+	top: 11%;
+	left: 7%;
+}
+
+.presentation__tabs_label--10 {
+	bottom: 43%;
+	left: 23%;
+}
+
+.presentation__tabs_label--11 {
+	bottom: 11%;
+	left: 16%;
+}
+
+.presentation__tabs_label--12 {
+	top: 17%;
+	right: 24%;
+}
+
+.presentation__tabs_label--13 {
+	top: 46%;
+	right: 30%;
+}
+
+.presentation__tabs_label--14 {
+	bottom: 10%;
+	right: 18%;
+}
+
+.presentation__tabs_label--15 {
+	bottom: 23%;
+	right: 40%;
+}
+
+.presentation__tabs_label--16 {
+	bottom: 30%;
+	right: 1%;
+}
