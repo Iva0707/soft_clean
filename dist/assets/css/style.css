@@ -752,25 +752,24 @@ input::placeholder {
 
 .label {
     position: absolute;
-    display: flex;
-    align-items: center;
-    max-width: 17.5rem;
-    padding: 1.6rem;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
-    .label.label--hero {
+    .label.hero__label {
         top: 50%;
         right: -60%;
     }
 }
 
 @media (max-width: 767px) {
-    .label.label--hero {
+    .label.hero__label {
         display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .label.presentation__tabs_label {
+        pointer-events: none;
     }
 }
 
@@ -805,21 +804,55 @@ input::placeholder {
     transform: translate(-50%, 0);
 }
 
+@media (max-width: 767px) {
+    .presentation__tabs_label .label__dot {
+        cursor: pointer;
+        pointer-events: all;
+    }
+
+    .presentation__tabs_label .label__dot:hover {
+        z-index: 2;
+    }
+
+    .presentation__tabs_label .label__dot:hover + .label__wrapper {
+        position: relative;
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+.label__wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 17.5rem;
+    padding: 1.6rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+    .presentation__tabs_label .label__wrapper {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+}
+
 .label__text {
     text-align: center;
     font-weight: 600;
     font-size: 1.4rem;
 }
 
-.label__text.label__text--presentation {
-    text-align: left;
-    font-weight: 400;
-    font-size: 1.2rem;
-}
-
 .label__text strong {
     font-weight: inherit;
     color: #43aaff;
+}
+
+.presentation__tabs_label .label__text {
+    text-align: left;
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {

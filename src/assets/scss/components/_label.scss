@@ -1,19 +1,7 @@
 .label {
 	position: absolute;
 
-	display: flex;
-	align-items: center;
-
-	max-width: 17.5rem;
-	padding: 1.6rem;
-
-	background: $white;
-
-	border-radius: 20px;
-
-	box-shadow: 0 3px 15px 0 rgba($black, 0.1);
-
-	&.label--hero {
+	&.hero__label {
 		@media (min-width: 768px) {
 			top: 50%;
 			right: -60%;
@@ -21,6 +9,12 @@
 
 		@media (max-width: 767px) {
 			display: none;
+		}
+	}
+
+	&.presentation__tabs_label {
+		@media (max-width: 767px) {
+			pointer-events: none;
 		}
 	}
 }
@@ -61,6 +55,46 @@
 
 		transform: translate(-50%, 0);
 	}
+
+	.presentation__tabs_label & {
+		@media (max-width: 767px) {
+			cursor: pointer;
+			pointer-events: all;
+
+			&:hover {
+				z-index: 2;
+
+				+ .label__wrapper {
+					position: relative;
+
+					opacity: 1;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}
+
+.label__wrapper {
+	display: flex;
+	align-items: center;
+
+	max-width: 17.5rem;
+	padding: 1.6rem;
+
+	background: $white;
+
+	border-radius: 20px;
+
+	box-shadow: 0 3px 15px 0 rgba($black, 0.1);
+
+	.presentation__tabs_label & {
+		@media (max-width: 767px) {
+			opacity: 0;
+
+			transition: opacity 0.2s;
+		}
+	}
 }
 
 .label__text {
@@ -68,14 +102,14 @@
 	font-weight: 600;
 	font-size: 1.4rem;
 
-	&.label__text--presentation {
-		text-align: left;
-		font-weight: 400;
-		font-size: 1.2rem;
-	}
-
 	& strong {
 		font-weight: inherit;
 		color: $blue;
+	}
+
+	.presentation__tabs_label & {
+		text-align: left;
+		font-weight: 400;
+		font-size: 1.2rem;
 	}
 }
