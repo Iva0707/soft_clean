@@ -1,4 +1,6 @@
 .button {
+	position: relative;
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -20,6 +22,9 @@
 	border-radius: $border-100;
 
 	cursor: pointer;
+	overflow: hidden;
+	z-index: 1;
+	transition: background-color 0.2s, border 0.2s, color 0.2s;
 
 	@media (min-width: 768px) {
 		min-height: 7rem;
@@ -30,27 +35,41 @@
 	}
 
 	&.button--blue {
-		background: $blue;
+		border-color: $blue;
+		box-shadow: inset 0 4px 1rem 0 rgba($white, 0.3), 3px 4px 1.2rem 0px rgba($blue, 0.6);
 
-		box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($blue, 0.6);
+		@include button-fill-effect($blue);
 	}
 
 	&.button--yellow {
-		background: $yellow;
+		border-color: $yellow;
 
-		box-shadow: inset 0 4px 10px 0 rgba(white, 0.3), 3px 4px 12px 0px rgba($yellow, 0.6);
+		box-shadow: inset 0 4px 1rem 0 rgba($white, 0.3), 3px 4px 1.2rem 0px rgba($yellow, 0.6);
+
+		@include button-fill-effect($yellow);
 	}
 
 	&.button--overline {
 		color: $black_1;
 
 		border-color: $blue;
+
+		@include button-fill-effect(rgba($blue, 0.8));
+
+		&:after {
+			background-color: transparent;
+		}
 	}
 
 	&.button--basic {
 		min-height: fit-content;
 
 		color: $blue;
+
+		&:hover,
+		&:focus-visible {
+			color: $yellow;
+		}
 	}
 
 	&.button--small {

@@ -38,7 +38,6 @@
 	transform: translateY(-50%);
 }
 
-
 @mixin pseudo-left-top {
 	position: absolute;
 	top: 0;
@@ -99,7 +98,7 @@
 
 	border-radius: $border-30;
 
-	box-shadow: 0 5px 20px 0 rgba($black, 0.1);
+	box-shadow: 0 0.5rem 2rem 0 rgba($black, 0.1);
 	overflow: hidden;
 
 	@media (min-width: 768px) {
@@ -108,5 +107,44 @@
 
 	@media (max-width: 767px) {
 		padding: 2rem 3rem;
+	}
+}
+
+@mixin button-fill-effect($fill-color) {
+	&:after,
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		height: 100%;
+
+		border-radius: $border-100;
+
+		content: "";
+	}
+
+	&:after {
+		width: 100%;
+		background-color: $fill-color;
+		z-index: -2;
+	}
+
+	&:before {
+		width: 0%;
+
+		background-color: darken($fill-color, 10%);
+
+		transition: background-color 0.2s, width 0.2s;
+		z-index: -1;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: $white;
+
+		&:before {
+			width: 100%;
+		}
 	}
 }

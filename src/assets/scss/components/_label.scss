@@ -80,15 +80,25 @@
 	align-items: center;
 
 	max-width: 17.5rem;
+	width: fit-content;
 	padding: 1.6rem;
 
 	background: $white;
 
-	border-radius: 20px;
+	border-radius: 2rem;
 
-	box-shadow: 0 3px 15px 0 rgba($black, 0.1);
+	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
 
 	.presentation__tabs_label & {
+		@media (max-width: 1024px) {
+			max-width: 13rem;
+			padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+		}
+
+		@media (max-width: 1024px) and (min-width: 768px) {
+			background: rgba($white, 0.9);
+		}
+
 		@media (max-width: 767px) {
 			opacity: 0;
 

@@ -101,6 +101,8 @@
 
 	overflow: hidden;
 
+	transition: background-color 0.2s;
+
 	@media (min-width: 768px) {
 		height: 7rem;
 	}
@@ -111,10 +113,20 @@
 
 	&.calculation__media_item--telegram {
 		background-color: $blue;
+
+		&:hover,
+		&:focus-visible {
+			background-color: darken($blue, 10%);
+		}
 	}
 
 	&.calculation__media_item--whatsapp {
 		background-color: $green_2;
+
+		&:hover,
+		&:focus-visible {
+			background-color: darken($green_2, 10%);
+		}
 	}
 }
 

@@ -12,11 +12,13 @@
 	width: fit-content;
 	margin-inline: auto;
 
-	background-color: $white;
-
 	border-radius: 10rem;
 
-	box-shadow: 0 0 20px 0 rgba($black, 0.12);
+	@media (min-width: 768px) {
+		background-color: $white;
+
+		box-shadow: 0 0 2rem 0 rgba($black, 0.12);
+	}
 
 	&:not(:last-child) {
 		margin-bottom: 2rem;
@@ -26,9 +28,17 @@
 .presentation__nav_btn {
 	color: $black_1;
 
+	transition: color 0.2s, background-color 0.2s;
+
 	&[data-active] {
 		color: $white;
+
 		background-color: $yellow;
+	}
+
+	&:hover:not([data-active]),
+	&:focus-visible:not([data-active]) {
+		color: $blue;
 	}
 }
 
@@ -43,9 +53,8 @@
 .presentation__tabs_block {
 	position: relative;
 
-	max-width: 100%;
 	width: 100%;
-
+	max-width: 100%;
 	aspect-ratio: 16/9;
 
 	border-radius: 3rem;
@@ -66,7 +75,14 @@
 
 .presentation__tabs_label--2 {
 	bottom: 48%;
-	left: 7%;
+
+	@media (min-width: 480px) {
+		left: 7%;
+	}
+
+	@media (max-width: 479px) {
+		left: 1%;
+	}
 }
 
 .presentation__tabs_label--3 {
@@ -86,12 +102,26 @@
 
 .presentation__tabs_label--6 {
 	top: 14%;
-	right: 5%;
+
+	@media (min-width: 480px) {
+		right: 5%;
+	}
+
+	@media (max-width: 479px) {
+		right: 1%;
+	}
 }
 
 .presentation__tabs_label--7 {
-	top: 31%;
-	right: 24%;
+	@media (min-width: 480px) {
+		top: 31%;
+		right: 24%;
+	}
+
+	@media (max-width: 479px) {
+		top: 7%;
+		right: 17%;
+	}
 }
 
 .presentation__tabs_label--8 {
@@ -105,8 +135,15 @@
 }
 
 .presentation__tabs_label--10 {
-	bottom: 43%;
-	left: 23%;
+	@media (min-width: 480px) {
+		bottom: 43%;
+		left: 23%;
+	}
+
+	@media (max-width: 479px) {
+		bottom: 45%;
+		left: 12%;
+	}
 }
 
 .presentation__tabs_label--11 {
@@ -115,26 +152,205 @@
 }
 
 .presentation__tabs_label--12 {
-	top: 17%;
 	right: 24%;
+
+	@media (min-width: 480px) {
+		top: 17%;
+	}
+
+	@media (max-width: 479px) {
+		top: 1%;
+	}
 }
 
 .presentation__tabs_label--13 {
-	top: 46%;
-	right: 30%;
+	@media (min-width: 480px) {
+		top: 46%;
+		right: 30%;
+	}
+
+	@media (max-width: 479px) {
+		top: 33%;
+		right: 20%;
+	}
 }
 
 .presentation__tabs_label--14 {
 	bottom: 10%;
-	right: 18%;
+
+	@media (min-width: 480px) {
+		right: 18%;
+	}
+
+	@media (max-width: 479px) {
+		right: 8%;
+	}
 }
 
 .presentation__tabs_label--15 {
-	bottom: 23%;
-	right: 40%;
+	@media (min-width: 480px) {
+		bottom: 23%;
+		right: 40%;
+	}
+
+	@media (max-width: 479px) {
+		bottom: 1%;
+		right: 33%;
+	}
 }
 
 .presentation__tabs_label--16 {
 	bottom: 30%;
 	right: 1%;
+}
+
+.presentation__tabs_label--17 {
+	top: 1%;
+	left: 1%;
+}
+
+.presentation__tabs_label--18 {
+	@media (min-width: 480px) {
+		top: 18%;
+		left: 23%;
+	}
+
+	@media (max-width: 479px) {
+		top: 3%;
+		left: 20%;
+	}
+}
+
+.presentation__tabs_label--19 {
+	bottom: 45%;
+
+	@media (min-width: 480px) {
+		left: 11%;
+	}
+
+	@media (max-width: 479px) {
+		left: 2%;
+	}
+}
+
+.presentation__tabs_label--20 {
+	bottom: 6%;
+	left: 7%;
+}
+
+.presentation__tabs_label--21 {
+	@media (min-width: 480px) {
+		bottom: 22%;
+		left: 17%;
+	}
+
+	@media (max-width: 479px) {
+		bottom: 7%;
+		left: 12%;
+	}
+}
+
+.presentation__tabs_label--22 {
+	bottom: 29%;
+
+	@media (min-width: 480px) {
+		left: 39%;
+	}
+
+	@media (max-width: 479px) {
+		left: 29%;
+	}
+}
+
+.presentation__tabs_label--23 {
+	top: 29%;
+	left: 39%;
+}
+
+.presentation__tabs_label--24 {
+	right: 15%;
+
+	@media (min-width: 480px) {
+		top: 22%;
+	}
+
+	@media (max-width: 479px) {
+		top: 4%;
+	}
+}
+
+.presentation__tabs_label--25 {
+	bottom: 42%;
+	right: 1%;
+}
+
+.presentation__tabs_label--26 {
+	bottom: 22%;
+	right: 12%;
+}
+
+.presentation__tabs_label--27 {
+	top: 29%;
+	left: 12%;
+}
+
+.presentation__tabs_label--28 {
+	bottom: 14%;
+	left: 12%;
+}
+
+.presentation__tabs_label--29 {
+	top: 5%;
+
+	@media (min-width: 480px) {
+		left: 17%;
+	}
+
+	@media (max-width: 479px) {
+		left: 5%;
+	}
+}
+
+.presentation__tabs_label--30 {
+	top: 11%;
+	left: 41%;
+}
+
+.presentation__tabs_label--31 {
+	@media (min-width: 480px) {
+		top: 31%;
+		left: 35%;
+	}
+
+	@media (max-width: 479px) {
+		top: 14%;
+		left: 28%;
+	}
+}
+
+.presentation__tabs_label--32 {
+	bottom: 26%;
+	left: 36%;
+}
+
+.presentation__tabs_label--33 {
+	bottom: 31%;
+	right: 24%;
+}
+
+.presentation__tabs_label--34 {
+	@media (min-width: 480px) {
+		top: 21%;
+		right: 6%;
+	}
+
+	@media (max-width: 479px) {
+		top: 2%;
+		right: 2%;
+	}
+}
+
+.presentation__tabs_label--35 {
+	bottom: 8%;
+	right: 20%;
 }
