@@ -1,0 +1,140 @@
+.gallery__swiper {
+	margin: -20px;
+	padding: 20px;
+}
+
+.gallery-slide__wrapper {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+
+	padding: 10px;
+
+	background-color: $white;
+
+	border-radius: $border-30;
+
+	box-shadow: 0 0.5rem 2rem 0 rgba($black, 0.1);
+}
+
+.gallery-slide__images {
+	position: relative;
+
+	width: 100%;
+	max-width: 500px;
+	aspect-ratio: 7 / 6;
+
+	border-radius: 3rem;
+
+	overflow: hidden;
+}
+
+.gallery-slide__after_wrapp {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 100%;
+	width: 50%;
+
+	overflow: hidden;
+
+	z-index: 2;
+}
+
+.gallery-slide__line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+
+	width: 2px;
+
+	background: $white;
+
+	z-index: 3;
+}
+
+.gallery-slide__handle {
+	position: absolute;
+	top: 50%;
+	left: calc(50% - 31px);
+
+	width: 62px;
+	height: 62px;
+
+	background: $yellow;
+
+	border-radius: 50%;
+	box-shadow: inset 0 4px 10px 0 rgba($white, 0.3);
+
+	z-index: 4;
+	cursor: ew-resize;
+	transform: translateY(-50%);
+
+	&:before,
+	&:after {
+		position: absolute;
+
+		width: 10px;
+		height: 14px;
+
+		background: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.26318 5.42128L1.86695 0.357847C1.52538 0.123845 1.18122 0 0.895157 0C0.342111 0 0 0.44386 0 1.18682V12.1304C0 12.8725 0.34168 13.3155 0.893433 13.3155C1.17993 13.3155 1.51859 13.1915 1.86091 12.9569L9.26059 7.89355C9.73647 7.56739 10 7.12849 10 6.65715C10.0001 6.18612 9.73959 5.74733 9.26318 5.42128Z' fill='white' /%3E%3C/svg%3E")
+			no-repeat;
+
+		content: "";
+	}
+
+	&:before {
+		top: 50%;
+		left: 50%;
+	}
+
+	&:after {
+		bottom: 50%;
+		right: 50%;
+
+		rotate: 180deg;
+	}
+}
+
+.gallery-slide__subtitle {
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+}
+
+.gallery-slide__description {
+	color: $gray;
+
+	@extend .text--small;
+
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	strong {
+		color: $black_1;
+	}
+}
+
+.gallery-slide__label {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 5rem;
+	padding-inline: 2rem;
+
+	font-weight: 800;
+	color: $blue;
+
+	border: 1px solid $blue;
+	border-radius: $border-100;
+}

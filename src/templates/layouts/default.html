@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		{{> head }}
+	</head>
 
-<head>
-	{{> head }}
-</head>
+	<body>
+		{{> header }}
 
-<body>
-	{{> header }}
+		<main class="main">{{> body }}</main>
 
-	<main class="main">
-		{{> body }}
-	</main>
+		{{> footer }}
 
-	{{> footer }}
-
-	<script defer src="assets/js/script.js"></script>
-</body>
-
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script defer src="assets/js/script.js"></script>
+	</body>
 </html>

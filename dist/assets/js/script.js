@@ -254,3 +254,83 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 });
+
+// ____________ slide cards ____________________
+
+const beforeAfterSlider = ({ container, afterWrapper, sliderLine, sliderHandle }) => {
+	let isDragging = false;
+
+	const moveSlider = (x) => {
+		const rect = container.getBoundingClientRect();
+		let offsetX = x - rect.left;
+		offsetX = Math.max(0, Math.min(offsetX, rect.width));
+		const percent = (offsetX / rect.width) * 100;
+
+		afterWrapper.style.width = `${percent}%`;
+		sliderLine.style.left = `${percent}%`;
+		sliderHandle.style.left = `calc(${percent}% - 31px)`;
+	};
+
+	const startDrag = (e) => {
+		isDragging = true;
+		moveSlider(e.touches ? e.touches[0].clientX : e.clientX);
+	};
+
+	const stopDrag = () => {
+		isDragging = false;
+	};
+
+	const onDrag = (e) => {
+		if (!isDragging) return;
+		moveSlider(e.touches ? e.touches[0].clientX : e.clientX);
+	};
+
+	sliderHandle.addEventListener("mousedown", startDrag);
+	sliderHandle.addEventListener("touchstart", startDrag);
+	window.addEventListener("mouseup", stopDrag);
+	window.addEventListener("touchend", stopDrag);
+	window.addEventListener("mousemove", onDrag);
+	window.addEventListener("touchmove", onDrag);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	const SELECTORS = {
+		wrapper: ".gallery-slide__images",
+		after: ".gallery-slide__after_wrapp",
+		line: ".gallery-slide__line",
+		handle: ".gallery-slide__handle",
+	};
+
+	document.querySelectorAll(SELECTORS.wrapper).forEach(($container) => {
+		const $afterWrapper = $container.querySelector(SELECTORS.after);
+		const $sliderLine = $container.querySelector(SELECTORS.line);
+		const $sliderHandle = $container.querySelector(SELECTORS.handle);
+
+		beforeAfterSlider({
+			container: $container,
+			afterWrapper: $afterWrapper,
+			sliderLine: $sliderLine,
+			sliderHandle: $sliderHandle,
+		});
+	});
+});
+
+// ____________ swiper ____________________
+
+const swiper = new Swiper(".gallery__swiper", {
+	spaceBetween: 18,
+	slidesPerView: "auto",
+	loop: true,
+	allowTouchMove: false,
+	spaceBetween: 40,
+
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+});
