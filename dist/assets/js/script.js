@@ -321,8 +321,9 @@ const swiper = new Swiper(".gallery__swiper", {
 	spaceBetween: 18,
 	slidesPerView: "auto",
 	loop: true,
+	spaceBetween: 20,
 	allowTouchMove: false,
-	spaceBetween: 40,
+	autoHeight: true,
 
 	pagination: {
 		el: ".swiper-pagination",
@@ -332,5 +333,11 @@ const swiper = new Swiper(".gallery__swiper", {
 	navigation: {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
+	},
+
+	breakpoints: {
+		768: {
+			spaceBetween: 60,
+		},
 	},
 });
