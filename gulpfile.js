@@ -73,7 +73,7 @@ function css() {
   return src(path.src.css, { base: srcPath + "assets/scss/" })
     .pipe(
       plumber({
-        errorHandler: function (err) {
+        errorgallery-slide__handler: function (err) {
           notify.onError({
             title: "SCSS Error",
             message: "Error: <%= error.message %>",
@@ -115,7 +115,7 @@ function js() {
   return src(path.src.js, { base: srcPath + "assets/js/" })
     .pipe(
       plumber({
-        errorHandler: function (err) {
+        errorgallery-slide__handler: function (err) {
           notify.onError({
             title: "JS Error",
             message: "Error: <%= error.message %>",

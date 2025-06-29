@@ -255,66 +255,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-// ____________ slide cards ____________________
-
-const beforeAfterSlider = ({ container, afterWrapper, sliderLine, sliderHandle }) => {
-	let isDragging = false;
-
-	const moveSlider = (x) => {
-		const rect = container.getBoundingClientRect();
-		let offsetX = x - rect.left;
-		offsetX = Math.max(0, Math.min(offsetX, rect.width));
-		const percent = (offsetX / rect.width) * 100;
-
-		afterWrapper.style.width = `${percent}%`;
-		sliderLine.style.left = `${percent}%`;
-		sliderHandle.style.left = `calc(${percent}% - 31px)`;
-	};
-
-	const startDrag = (e) => {
-		isDragging = true;
-		moveSlider(e.touches ? e.touches[0].clientX : e.clientX);
-	};
-
-	const stopDrag = () => {
-		isDragging = false;
-	};
-
-	const onDrag = (e) => {
-		if (!isDragging) return;
-		moveSlider(e.touches ? e.touches[0].clientX : e.clientX);
-	};
-
-	sliderHandle.addEventListener("mousedown", startDrag);
-	sliderHandle.addEventListener("touchstart", startDrag);
-	window.addEventListener("mouseup", stopDrag);
-	window.addEventListener("touchend", stopDrag);
-	window.addEventListener("mousemove", onDrag);
-	window.addEventListener("touchmove", onDrag);
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-	const SELECTORS = {
-		wrapper: ".gallery-slide__images",
-		after: ".gallery-slide__after_wrapp",
-		line: ".gallery-slide__line",
-		handle: ".gallery-slide__handle",
-	};
-
-	document.querySelectorAll(SELECTORS.wrapper).forEach(($container) => {
-		const $afterWrapper = $container.querySelector(SELECTORS.after);
-		const $sliderLine = $container.querySelector(SELECTORS.line);
-		const $sliderHandle = $container.querySelector(SELECTORS.handle);
-
-		beforeAfterSlider({
-			container: $container,
-			afterWrapper: $afterWrapper,
-			sliderLine: $sliderLine,
-			sliderHandle: $sliderHandle,
-		});
-	});
-});
-
 // ____________ swiper ____________________
 
 const swiper = new Swiper(".gallery__swiper", {
@@ -324,6 +264,14 @@ const swiper = new Swiper(".gallery__swiper", {
 	spaceBetween: 20,
 	allowTouchMove: false,
 	autoHeight: true,
+
+	keyboard: {
+		enabled: true,
+	},
+
+	mouse: {
+		enabled: true,
+	},
 
 	pagination: {
 		el: ".swiper-pagination",
@@ -340,4 +288,68 @@ const swiper = new Swiper(".gallery__swiper", {
 			spaceBetween: 60,
 		},
 	},
+});
+
+// ____________ slide cards ____________________
+
+const imageComparisonSlider = ({ containers }) => {
+	if (!containers?.length) return;
+
+	containers.forEach(($container) => {
+		const $slider = $container.querySelector(".gallery-slide__images");
+		const $afterWrapper = $container.querySelector(".gallery-slide__after_wrapp");
+		const $handle = $container.querySelector(".gallery-slide__handle");
+
+		if (!$slider || !$afterWrapper || !$handle) return;
+
+		let isDragging = false;
+
+		const onMove = (event) => {
+			if (!isDragging) return;
+
+			const rect = $slider.getBoundingClientRect();
+			const sliderWidth = $slider.clientWidth;
+			const handleWidth = $handle.clientWidth;
+
+			let x = (event.clientX || event.touches?.[0]?.clientX) - rect.left;
+			x = Math.max(0, Math.min(x, sliderWidth));
+
+			const percent = (x / sliderWidth) * 100;
+
+			$afterWrapper.style.width = `${(100 - percent).toFixed(4)}%`;
+			$handle.style.left = `calc(${percent.toFixed(4)}% - ${handleWidth / 2}px)`;
+		};
+
+		const startDrag = (event) => {
+			event.preventDefault();
+			isDragging = true;
+			onMove(event);
+		};
+
+		const stopDrag = () => {
+			isDragging = false;
+		};
+
+		$handle.addEventListener("mousedown", startDrag);
+		$handle.addEventListener("touchstart", startDrag);
+
+		window.addEventListener("mousemove", onMove);
+		window.addEventListener("touchmove", onMove);
+
+		window.addEventListener("mouseup", stopDrag);
+		window.addEventListener("touchend", stopDrag);
+		window.addEventListener("mouseleave", stopDrag);
+	});
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	const SELECTORS = {
+		wrapper: ".js-image-comparison",
+	};
+
+	const $sliders = document.querySelectorAll(SELECTORS.wrapper);
+
+	imageComparisonSlider({
+		containers: $sliders,
+	});
 });
