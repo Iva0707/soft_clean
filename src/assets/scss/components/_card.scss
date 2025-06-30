@@ -75,6 +75,8 @@
 }
 
 .card__text_wrapp {
+	flex: 1;
+
 	.card--row & {
 		align-self: center;
 	}

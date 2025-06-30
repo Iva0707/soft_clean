@@ -40,6 +40,17 @@
 	}
 }
 
+.header__logo_link {
+	display: block;
+
+	width: 100%;
+	max-width: 13.2rem;
+}
+
+.header__logo {
+	@include image-contain;
+}
+
 .header-nav {
 	@media (min-width: 1025px) {
 		margin-left: auto;

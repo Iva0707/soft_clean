@@ -30,6 +30,17 @@
 	}
 }
 
+.footer__logo_wrapper {
+	display: block;
+
+	width: 100%;
+	max-width: 13.2rem;
+}
+
+.footer__logo {
+	@include image-contain;
+}
+
 .footer__list {
 	display: flex;
 	align-items: center;
@@ -61,13 +72,15 @@
 }
 
 .footer__link {
-	display: inline-block;
+	&.footer__link--media {
+		display: inline-block;
 
-	transition: transform 0.2s;
+		transition: transform 0.2s;
 
-	&:hover,
-	&:focus-visible {
-		transform: scale(1.2);
+		&:hover,
+		&:focus-visible {
+			transform: scale(1.2);
+		}
 	}
 }
 

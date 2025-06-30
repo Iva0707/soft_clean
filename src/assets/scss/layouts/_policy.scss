@@ -1,0 +1,53 @@
+.policy {
+	div {
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	h1 {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	h2 {
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	h3 {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	h4 {
+		&:not(:last-child) {
+			margin-bottom: 0.8rem;
+		}
+	}
+
+	ul {
+		padding-left: 10px;
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	li {
+		list-style: "- ";
+
+		&:not(:last-child) {
+			margin-bottom: 0.6rem;
+		}
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 0.6rem;
+		}
+	}
+}
