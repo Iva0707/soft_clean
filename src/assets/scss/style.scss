@@ -15,8 +15,10 @@
 @import "components/card";
 @import "components/label";
 @import "components/swiper";
+@import "components/burger";
 
 // Layouts
+@import "layouts/header";
 @import "layouts/hero";
 @import "layouts/advantages";
 @import "layouts/our-work";
@@ -33,4 +35,5 @@
 @import "layouts/questions";
 @import "layouts/gallery";
 @import "layouts/presentation";
+@import "layouts/certificates";
 @import "layouts/footer";

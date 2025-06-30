@@ -10,43 +10,81 @@
 	</head>
 
 	<body>
-		<header class="header">
+		<header class="header js-header">
 			<div class="container">
-				<div class="wrapper">
-		
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="index.html" class="header__logo_link">
+							<img class="header__logo" src="./assets/images/dev/svg/logo.svg" alt="Logo" />
+						</a>
+						<button class="burger js-burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
+					<nav class="header__nav header-nav js-header-nav">
+						<ul class="header-nav__list">
+							<li class="header-nav__item">
+								<div class="header-nav__contact_wrapp">
+									<a class="header-nav__phone" href="tel:+380954340403">+38 (095) 434 04 03</a>
+									<span class="header-nav__time">Пн-Нд: 9:00 - 21:00</span>
+								</div>
+							</li>
+							<li class="header-nav__item">
+								<div class="header-nav__media_wrapp">
+									<span class="header-nav__label">Швидкий зв'язок з нами в месенджерах:</span>
+									<ul class="header-nav__media_list">
+										<li>
+											<a href="#" class="header-nav__media_link header-nav__media_link--telegram">
+												<img class="header-nav__media_image" src="./assets/images/dev/svg/telegram.svg" alt="Telegram" />
+											</a>
+										</li>
+										<li>
+											<a href="#" class="header-nav__media_link header-nav__media_link--whatsapp">
+												<img class="header-nav__media_image" src="./assets/images/dev/svg/WhatsApp.svg" alt="WhatsApp" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header-nav__item">
+								<button class="button button--overline button--small header-nav__button" type="button">Замовити консультацію</button>
+							</li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</header>
+
 		<main class="main">
 
 <section class="hero section--curved_out_bottom">
 	<div class="container">
-		<div class="wrapper">
-			<div class="hero__content">
-				<h1 class="hero__title">
-					<strong>Бережне прибирання квартир і будинків</strong>
-					за фіксованою вартістю від 150₴ / м²
-					<span class="hero__deco"></span>
-					<em>з гарантією якості</em>
-				</h1>
-				<h2 class="hero__subtitle">
-					Виберіть вид прибирання, отримаєте точний розрахунок вартості і
-					<strong>знижку 10%</strong>
-					на перше замовлення
-				</h2>
-				<div class="hero__buttons">
-					<button class="button button--blue hero__button">Розрахувати вартість</button>
-					<button class="button button--yellow hero__button">Замовити прибирання</button>
-				</div>
-				<div class="label hero__label">
-					<span class="label__dot"></span>
-					<div class="label__wrapper">
-						<span class="label__text">
-							Прибрано
-							<strong>більше 535</strong>
-							обʼєктів
-						</span>
-					</div>
+		<div class="hero__wrapper">
+			<h1 class="hero__title">
+				<strong>Бережне прибирання квартир і будинків</strong>
+				за фіксованою вартістю від 150₴ / м²
+				<span class="hero__deco"></span>
+				<em>з гарантією якості</em>
+			</h1>
+			<h2 class="hero__subtitle">
+				Виберіть вид прибирання, отримаєте точний розрахунок вартості і
+				<strong>знижку 10%</strong>
+				на перше замовлення
+			</h2>
+			<div class="hero__buttons">
+				<button class="button button--blue hero__button" type="button">Розрахувати вартість</button>
+				<button class="button button--yellow hero__button" type="button">Замовити прибирання</button>
+			</div>
+			<div class="label hero__label">
+				<span class="label__dot"></span>
+				<div class="label__wrapper">
+					<span class="label__text">
+						Прибрано
+						<strong>більше 535</strong>
+						обʼєктів
+					</span>
 				</div>
 			</div>
 		</div>
@@ -55,7 +93,7 @@
 
 <section class="why-us">
 	<div class="container">
-		<div class="wrapper">
+		<div class="why-us__wrapper">
 			<ul class="why-us__list">
 				<li class="why-us__item">
 					<article class="why-us-item">
@@ -96,7 +134,7 @@
 
 <section class="navigation">
 	<div class="container">
-		<div class="wrapper">
+		<div class="navigation__wrapper">
 			<ul class="navigation__list">
 				<li class="navigation__item">
 					<a href="" class="navigation__link">Послуги</a>
@@ -123,7 +161,7 @@
 
 <section class="advantages section--curved_in_top">
 	<div class="container">
-		<div class="wrapper">
+		<div class="advantages__wrapper">
 			<div class="heading">
 				<h3 class="heading__label">А ви знали?</h3>
 				<h2 class="heading__title">
@@ -203,7 +241,7 @@
 
 <section class="our-work">
 	<div class="container">
-		<div class="wrapper">
+		<div class="our-work__wrapper">
 			<div class="heading">
 				<h2 class="heading__title">
 					Наша робота побудована
@@ -255,31 +293,29 @@
 
 <section class="apply-banner section--curved_in_bottom">
 	<div class="container">
-		<div class="wrapper">
-			<div class="apply-banner__row">
-				<div class="apply-banner__column apply-banner__column--text">
-					<span class="apply-banner__text">
-						<strong>Залиште заявку</strong>
-						на консультацію і розрахунок вартості
-						<i>безкоштовно</i>
-					</span>
-					<form class="apply-banner__form" action="#">
-						<div class="apply-banner__form_row">
-							<input class="apply-banner_input" required type="tel" placeholder="Введіть ваш телефон" />
-							<button class="button button--yellow apply-banner__button" type="submit">Чекаю на дзвінок</button>
-						</div>
-						<label class="checkbox apply-banner__checkbox">
-							<input required class="checkbox__input" type="checkbox" name="" />
-							<span class="checkbox__title">
-								Натискаючи на кнопку ви погоджуєтеся з умовами
-								<a href="#">Політики конфіденційності</a>
-							</span>
-						</label>
-					</form>
-				</div>
-				<div class="apply-banner__column apply-banner__column--image">
-					<img src="assets/images/dev/apply-banner/image_2.png" alt="Image" class="apply-banner__image" />
-				</div>
+		<div class="apply-banner__wrapper">
+			<div class="apply-banner__column apply-banner__column--text">
+				<span class="apply-banner__text">
+					<strong>Залиште заявку</strong>
+					на консультацію і розрахунок вартості
+					<i>безкоштовно</i>
+				</span>
+				<form class="apply-banner__form" action="#">
+					<div class="apply-banner__form_row">
+						<input class="apply-banner_input" required type="tel" placeholder="Введіть ваш телефон" />
+						<button class="button button--yellow apply-banner__button" type="submit">Чекаю на дзвінок</button>
+					</div>
+					<label class="checkbox apply-banner__checkbox">
+						<input required class="checkbox__input" type="checkbox" name="" />
+						<span class="checkbox__title">
+							Натискаючи на кнопку ви погоджуєтеся з умовами
+							<a href="#">Політики конфіденційності</a>
+						</span>
+					</label>
+				</form>
+			</div>
+			<div class="apply-banner__column apply-banner__column--image">
+				<img src="assets/images/dev/apply-banner/image_2.png" alt="Image" class="apply-banner__image" />
 			</div>
 		</div>
 	</div>
@@ -287,7 +323,7 @@
 
 <section class="services">
 	<div class="container">
-		<div class="wrapper">
+		<div class="services__wrapper">
 			<div class="heading">
 				<h2 class="heading__title">
 					<em>6 видів прибирання</em>
@@ -313,8 +349,8 @@
 								5-7 годин
 							</p>
 							<span class="services-item__price">від 150 ₴ / м&#178;</span>
-							<button class="button button--blue button--small services-item__button--1">Розрахувати вартість</button>
-							<button class="button button--basic services-item__button--2">Детальніше</button>
+							<button class="button button--blue button--small services-item__button--1" type="button">Розрахувати вартість</button>
+							<button class="button button--basic services-item__button--2" type="button">Детальніше</button>
 						</div>
 					</article>
 				</li>
@@ -335,8 +371,8 @@
 								5-7 годин
 							</p>
 							<span class="services-item__price">від 150 ₴ / м&#178;</span>
-							<button class="button button--blue button--small services-item__button--1">Розрахувати вартість</button>
-							<button class="button button--basic services-item__button--2">Детальніше</button>
+							<button class="button button--blue button--small services-item__button--1" type="button">Розрахувати вартість</button>
+							<button class="button button--basic services-item__button--2" type="button">Детальніше</button>
 						</div>
 					</article>
 				</li>
@@ -379,8 +415,8 @@
 								2-4 години
 							</p>
 							<span class="services-item__price">від 500 ₴</span>
-							<button class="button button--blue button--small services-item__button--1">Розрахувати вартість</button>
-							<button class="button button--basic services-item__button--2">Детальніше</button>
+							<button class="button button--blue button--small services-item__button--1" type="button">Розрахувати вартість</button>
+							<button class="button button--basic services-item__button--2" type="button">Детальніше</button>
 						</div>
 					</article>
 				</li>
@@ -401,8 +437,8 @@
 								8-12 годин
 							</p>
 							<span class="services-item__price">від 100 ₴ / м&#178;</span>
-							<button class="button button--blue button--small services-item__button--1">Розрахувати вартість</button>
-							<button class="button button--basic services-item__button--2">Детальніше</button>
+							<button class="button button--blue button--small services-item__button--1" type="button">Розрахувати вартість</button>
+							<button class="button button--basic services-item__button--2" type="button">Детальніше</button>
 						</div>
 					</article>
 				</li>
@@ -423,8 +459,8 @@
 								до 3 годин
 							</p>
 							<span class="services-item__price">від 400 ₴ / м&#178;</span>
-							<button class="button button--blue button--small services-item__button--1">Розрахувати вартість</button>
-							<button class="button button--basic services-item__button--2">Детальніше</button>
+							<button class="button button--blue button--small services-item__button--1" type="button">Розрахувати вартість</button>
+							<button class="button button--basic services-item__button--2" type="button">Детальніше</button>
 						</div>
 					</article>
 				</li>
@@ -435,7 +471,7 @@
 
 <section class="additional-services">
 	<div class="container">
-		<div class="wrapper">
+		<div class="additional-services__wrapper">
 			<div class="heading">
 				<h3 class="heading__label">Не знайшли потрібний варіант?</h3>
 				<h2 class="heading__title">Подивіться додаткові послуги</h2>
@@ -548,18 +584,16 @@
 
 <section class="gift-banner">
 	<div class="container">
-		<div class="wrapper">
-			<div class="gift-banner__row">
-				<div class="gift-banner__column gift-banner__column--text">
-					<span class="gift-banner__text">
-						Замовте 3 додаткові послуги
-						<strong>і отримаєте четверту в подарунок</strong>
-					</span>
-					<button class="button button--blue gift-banner__button">Замовити прибирання</button>
-				</div>
-				<div class="gift-banner__column gift-banner__column--image">
-					<img src="assets/images/dev/gift-banner/image_1.png" alt="Image" class="gift-banner__image" />
-				</div>
+		<div class="gift-banner__wrapper">
+			<div class="gift-banner__column gift-banner__column--text">
+				<span class="gift-banner__text">
+					Замовте 3 додаткові послуги
+					<strong>і отримаєте четверту в подарунок</strong>
+				</span>
+				<button class="button button--blue gift-banner__button" type="button">Замовити прибирання</button>
+			</div>
+			<div class="gift-banner__column gift-banner__column--image">
+				<img src="assets/images/dev/gift-banner/image_1.png" alt="Image" class="gift-banner__image" />
 			</div>
 		</div>
 	</div>
@@ -567,7 +601,7 @@
 
 <section class="presentation section--curved_in_bottom section--curved_in_top js-tabs">
 	<div class="container">
-		<div class="wrapper">
+		<div class="presentation__wrapper">
 			<div class="heading">
 				<h2 class="heading__title">Подивіться наочно як ми робимо прибирання</h2>
 				<h3 class="heading__subtitle">Так виглядає прибирання в очах наших клінерів</h3>
@@ -822,35 +856,263 @@
 	</div>
 </section>
 
+<section class="gallery">
+	<div class="container">
+		<div class="gallery__wrapper">
+			<div class="heading">
+				<h2 class="heading__title">Виконаємо прибирання будь-якої складності</h2>
+				<h3 class="heading__subtitle">Подивіться як змінюється квартира навіть в найскладніших ситуаціях</h3>
+			</div>
+			<div class="gallery__swiper js-gallery-swiper swiper">
+				<div class="swiper-wrapper">
+					<div class="gallery__slide gallery-slide swiper-slide">
+						<div class="gallery-slide__wrapper">
+							<div class="js-image-gallery">
+								<div class="gallery-slide__images js-gallery-slide-images">
+									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_1.jpg" alt="Before image" />
+									<div class="gallery-slide__after_wrapp js-gallery-slide-after">
+										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_2.jpg" alt="After image" />
+									</div>
+									<div class="gallery-slide__handle js-gallery-slide-handle">
+										<span class="gallery-slide__line"></span>
+										<span class="gallery-slide__button"></span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery-slide__content">
+								<h4 class="gallery-slide__subtitle">Об'єкт: однокімнатна квартира</h4>
+								<div class="gallery-slide__description">
+									<p>
+										<strong>Пакет:</strong>
+										генеральне прибирання
+									</p>
+									<p>
+										<strong>Площа:</strong>
+										32 м²
+									</p>
+									<p>
+										<strong>Складні забруднення:</strong>
+										іржа, сильний наліт на ванні
+									</p>
+									<p>
+										<strong>Час роботи:</strong>
+										4 години
+									</p>
+									<p>
+										<strong>Бригада:</strong>
+										1 людинa
+									</p>
+								</div>
+								<span class="gallery-slide__label">Вартість: 2400₴</span>
+							</div>
+						</div>
+					</div>
+					<div class="gallery__slide gallery-slide swiper-slide">
+						<div class="gallery-slide__wrapper">
+							<div class="js-image-gallery">
+								<div class="gallery-slide__images js-gallery-slide-images">
+									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_3.jpg" alt="Before image" />
+									<div class="gallery-slide__after_wrapp js-gallery-slide-after">
+										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_4.jpg" alt="After image" />
+									</div>
+									<div class="gallery-slide__handle js-gallery-slide-handle">
+										<span class="gallery-slide__line"></span>
+										<span class="gallery-slide__button"></span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery-slide__content">
+								<h4 class="gallery-slide__subtitle">Об'єкт: двокімнатна квартира</h4>
+								<div class="gallery-slide__description">
+									<p>
+										<strong>Пакет:</strong>
+										генеральне прибирання
+									</p>
+									<p>
+										<strong>Площа:</strong>
+										45 м²
+									</p>
+									<p>
+										<strong>Складні забруднення:</strong>
+										бруд на кухні, жир, що в'ївся
+									</p>
+									<p>
+										<strong>Час роботи:</strong>
+										5 годин
+									</p>
+									<p>
+										<strong>Бригада:</strong>
+										1 людинa
+									</p>
+								</div>
+								<span class="gallery-slide__label">Вартість: 3100₴</span>
+							</div>
+						</div>
+					</div>
+					<div class="gallery__slide gallery-slide swiper-slide">
+						<div class="gallery-slide__wrapper">
+							<div class="js-image-gallery">
+								<div class="gallery-slide__images js-gallery-slide-images">
+									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_6.jpg" alt="Before image" />
+									<div class="gallery-slide__after_wrapp js-gallery-slide-after">
+										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_7.jpg" alt="After image" />
+									</div>
+									<div class="gallery-slide__handle js-gallery-slide-handle">
+										<span class="gallery-slide__line"></span>
+										<span class="gallery-slide__button"></span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery-slide__content">
+								<h4 class="gallery-slide__subtitle">Об'єкт: трикімнатна квартира</h4>
+								<div class="gallery-slide__description">
+									<p>
+										<strong>Пакет:</strong>
+										генеральне прибирання
+									</p>
+									<p>
+										<strong>Площа:</strong>
+										70 м²
+									</p>
+									<p>
+										<strong>Складні забруднення:</strong>
+										сліди жиру й забруднення на кухонній плитці
+									</p>
+									<p>
+										<strong>Час роботи:</strong>
+										3 години
+									</p>
+									<p>
+										<strong>Бригада:</strong>
+										2 людини
+									</p>
+								</div>
+								<span class="gallery-slide__label">Вартість: 5400₴</span>
+							</div>
+						</div>
+					</div>
+					<div class="gallery__slide gallery-slide swiper-slide">
+						<div class="gallery-slide__wrapper">
+							<div class="js-image-gallery">
+								<div class="gallery-slide__images js-gallery-slide-images">
+									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_10.jpg" alt="Before image" />
+									<div class="gallery-slide__after_wrapp js-gallery-slide-after">
+										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_5.jpg" alt="After image" />
+									</div>
+									<div class="gallery-slide__handle js-gallery-slide-handle">
+										<span class="gallery-slide__line"></span>
+										<span class="gallery-slide__button"></span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery-slide__content">
+								<h4 class="gallery-slide__subtitle">Об'єкт: приватний 2х поверховий будинок</h4>
+								<div class="gallery-slide__description">
+									<p>
+										<strong>Пакет:</strong>
+										прибирання після ремонту
+									</p>
+									<p>
+										<strong>Площа:</strong>
+										230 м²
+									</p>
+									<p>
+										<strong>Складні забруднення:</strong>
+										велика кількість пилу і цементу на поверхнях
+									</p>
+									<p>
+										<strong>Час роботи:</strong>
+										11 годин
+									</p>
+									<p>
+										<strong>Бригада:</strong>
+										3 людини
+									</p>
+								</div>
+								<span class="gallery-slide__label">Вартість: 11200₴</span>
+							</div>
+						</div>
+					</div>
+					<div class="gallery__slide gallery-slide swiper-slide">
+						<div class="gallery-slide__wrapper">
+							<div class="js-image-gallery">
+								<div class="gallery-slide__images js-gallery-slide-images">
+									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_8.jpg" alt="Before image" />
+									<div class="gallery-slide__after_wrapp js-gallery-slide-after">
+										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_9.jpg" alt="After image" />
+									</div>
+									<div class="gallery-slide__handle js-gallery-slide-handle">
+										<span class="gallery-slide__line"></span>
+										<span class="gallery-slide__button"></span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery-slide__content">
+								<h4 class="gallery-slide__subtitle">Об'єкт: однокімнатна квартира</h4>
+								<div class="gallery-slide__description">
+									<p>
+										<strong>Пакет:</strong>
+										генеральне прибирання
+									</p>
+									<p>
+										<strong>Площа:</strong>
+										30 м²
+									</p>
+									<p>
+										<strong>Складні забруднення:</strong>
+										багаторічний нагар на батареях
+									</p>
+									<p>
+										<strong>Час роботи:</strong>
+										3 години
+									</p>
+									<p>
+										<strong>Бригада:</strong>
+										1 людина
+									</p>
+								</div>
+								<span class="gallery-slide__label">Вартість: 2150₴</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-navigation">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="calculation section--curved_out_top section--curved_out_bottom">
 	<div class="container">
-		<div class="wrapper">
-			<div class="calculation__row">
-				<div class="calculation__column calculation__column--content">
-					<div class="heading heading--left">
-						<h2 class="heading__title">Моментальний розрахунок вартості по фотографії</h2>
-						<h3 class="heading__subtitle heading__subtitle--full">Надішліть фото в месенджері, щоб розрахувати вартість, швидко замовити прибирання або задати нам питання</h3>
-					</div>
-					<div class="calculation__content_wrapper">
-						<span class="calculation__description">Клікніть на зручний спосіб зв'язку і напишіть нам:</span>
-						<ul class="calculation__media">
-							<li class="calculation__media_item calculation__media_item--telegram">
-								<a class="calculation__media_link" href="#">
-									<img src="assets/images/dev/svg/telegram-2.svg" alt="Telegram" class="calculation__media_image" />
-								</a>
-							</li>
-							<li class="calculation__media_item calculation__media_item--whatsapp">
-								<a class="calculation__media_link" href="#">
-									<img src="assets/images/dev/svg/whatsApp-2.svg" alt="WhatsApp" class="calculation__media_image" />
-								</a>
-							</li>
-						</ul>
-						<span class="calculation__time">Швидкість відповіді 60 секунд</span>
-					</div>
+		<div class="calculation__wrapper">
+			<div class="calculation__column calculation__column--content">
+				<div class="heading heading--left">
+					<h2 class="heading__title">Моментальний розрахунок вартості по фотографії</h2>
+					<h3 class="heading__subtitle heading__subtitle--full">Надішліть фото в месенджері, щоб розрахувати вартість, швидко замовити прибирання або задати нам питання</h3>
 				</div>
-				<div class="calculation__column calculation__column--image">
-					<img class="calculation__image" src="assets/images/dev/calculation/image_2.png" alt="Image" />
+				<div class="calculation__content_wrapper">
+					<span class="calculation__description">Клікніть на зручний спосіб зв'язку і напишіть нам:</span>
+					<ul class="calculation__media">
+						<li class="calculation__media_item calculation__media_item--telegram">
+							<a class="calculation__media_link" href="#">
+								<img src="assets/images/dev/svg/telegram-2.svg" alt="Telegram" class="calculation__media_image" />
+							</a>
+						</li>
+						<li class="calculation__media_item calculation__media_item--whatsapp">
+							<a class="calculation__media_link" href="#">
+								<img src="assets/images/dev/svg/whatsApp-2.svg" alt="WhatsApp" class="calculation__media_image" />
+							</a>
+						</li>
+					</ul>
+					<span class="calculation__time">Швидкість відповіді 60 секунд</span>
 				</div>
+			</div>
+			<div class="calculation__column calculation__column--image">
+				<img class="calculation__image" src="assets/images/dev/calculation/image_2.png" alt="Image" />
 			</div>
 		</div>
 	</div>
@@ -858,7 +1120,7 @@
 
 <section class="inventory">
 	<div class="container">
-		<div class="wrapper">
+		<div class="inventory__wrapper">
 			<div class="heading">
 				<h2 class="heading__title">Що входить в інвентар нашого клінера</h2>
 				<h3 class="heading__subtitle">Інструменти, за допомогою яких створюємо затишок у вашому домі</h3>
@@ -939,71 +1201,118 @@
 	</div>
 </section>
 
-<section class="gift section--curved_out_top section--curved_out_bottom">
+<section class="certificates">
 	<div class="container">
-		<div class="wrapper">
-			<div class="gift__row">
-				<div class="gift__column">
-					<div class="heading heading--left heading--white">
-						<h2 class="heading__title">
-							<strong>Виберіть подарунок і замовте дбайливе прибирання,</strong>
-							без націнок і прихованих платежів
-						</h2>
+		<div class="certificates__wrapper">
+			<div class="heading">
+				<h2 class="heading__title">Сертифікати</h2>
+				<h3 class="heading__subtitle">Миючі засоби від перевірених виробників</h3>
+			</div>
+			<div class="certificates__swiper swiper js-certificates-swiper">
+				<div class="swiper-wrapper">
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_1.png" alt="certificate" />
+						</div>
 					</div>
-					<ul class="gift__content">
-						<li class="gift__item">
-							<article class="gift-item">
-								<div class="gift-item__image_wrapper">
-									<img src="assets/images/dev/svg/gift_1.svg" alt="Icon" class="gift-item__image" />
-								</div>
-								<h3 class="gift-item__title">Знижка 10% при першому замовленні</h3>
-								<span class="gift-item__description">Діє на всі пакети послуг</span>
-								<button class="button button--overline gift-item__button">Отримати подарунок</button>
-							</article>
-						</li>
-						<li class="gift__item">
-							<article class="gift-item">
-								<div class="gift-item__image_wrapper">
-									<img src="assets/images/dev/svg/gift_2.svg" alt="Icon" class="gift-item__image" />
-								</div>
-								<h3 class="gift-item__title">Безкоштовна мийка плити</h3>
-								<span class="gift-item__description">При замовленні в денний час доби</span>
-								<button class="button button--overline gift-item__button">Отримати подарунок</button>
-							</article>
-						</li>
-						<li class="gift__item">
-							<article class="gift-item">
-								<div class="gift-item__image_wrapper">
-									<img src="assets/images/dev/svg/gift_3.svg" alt="Icon" class="gift-item__image" />
-								</div>
-								<h3 class="gift-item__title">Мийка 2 вікон безкоштовно</h3>
-								<span class="gift-item__description">При замовленні прибирання після ремонту</span>
-								<button class="button button--overline gift-item__button">Отримати подарунок</button>
-							</article>
-						</li>
-					</ul>
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_2.png" alt="certificate" />
+						</div>
+					</div>
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_3.png" alt="certificate" />
+						</div>
+					</div>
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_1.png" alt="certificate" />
+						</div>
+					</div>
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_2.png" alt="certificate" />
+						</div>
+					</div>
+					<div class="certificates__slide swiper-slide">
+						<div class="certificates__slide_wrapper">
+							<img class="certificates__slide_image" src="assets/images/dev/certificates/image_3.png" alt="certificate" />
+						</div>
+					</div>
 				</div>
-				<div class="gift__column gift__column--image">
-					<img class="gift__image" src="assets/images/dev/gift/image_2.png" alt="Image" />
+				<div class="swiper-navigation">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="accordion js-accordion">
+<section class="gift section--curved_out_top section--curved_out_bottom">
 	<div class="container">
-		<div class="wrapper">
+		<div class="gift__wrapper">
+			<div class="gift__column">
+				<div class="heading heading--left heading--white">
+					<h2 class="heading__title">
+						<strong>Виберіть подарунок і замовте дбайливе прибирання,</strong>
+						без націнок і прихованих платежів
+					</h2>
+				</div>
+				<ul class="gift__content">
+					<li class="gift__item">
+						<article class="gift-item">
+							<div class="gift-item__image_wrapper">
+								<img src="assets/images/dev/svg/gift_1.svg" alt="Icon" class="gift-item__image" />
+							</div>
+							<h3 class="gift-item__title">Знижка 10% при першому замовленні</h3>
+							<span class="gift-item__description">Діє на всі пакети послуг</span>
+							<button class="button button--overline gift-item__button" type="button">Отримати подарунок</button>
+						</article>
+					</li>
+					<li class="gift__item">
+						<article class="gift-item">
+							<div class="gift-item__image_wrapper">
+								<img src="assets/images/dev/svg/gift_2.svg" alt="Icon" class="gift-item__image" />
+							</div>
+							<h3 class="gift-item__title">Безкоштовна мийка плити</h3>
+							<span class="gift-item__description">При замовленні в денний час доби</span>
+							<button class="button button--overline gift-item__button" type="button">Отримати подарунок</button>
+						</article>
+					</li>
+					<li class="gift__item">
+						<article class="gift-item">
+							<div class="gift-item__image_wrapper">
+								<img src="assets/images/dev/svg/gift_3.svg" alt="Icon" class="gift-item__image" />
+							</div>
+							<h3 class="gift-item__title">Мийка 2 вікон безкоштовно</h3>
+							<span class="gift-item__description">При замовленні прибирання після ремонту</span>
+							<button class="button button--overline gift-item__button" type="button">Отримати подарунок</button>
+						</article>
+					</li>
+				</ul>
+			</div>
+			<div class="gift__column gift__column--image">
+				<img class="gift__image" src="assets/images/dev/gift/image_2.png" alt="Image" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="guestions js-accordion">
+	<div class="container">
+		<div class="guestions__wrapper">
 			<div class="heading">
 				<h2 class="heading__title">Поширені запитання</h2>
 			</div>
-			<ul class="accordion__list">
-				<li class="accordion__item accordion__item--active_state">
-					<button type="button" class="accordion__trigger js-accordion__trigger">
+			<ul class="guestions__accordion accordion">
+				<li class="accordion__item accordion__item--active_state js-accordion-item">
+					<button class="accordion__trigger js-accordion__trigger" type="button">
 						<span class="accordion__trigger_text">Що потрібно, щоб підготуватися до прибирання?</span>
 						<span class="accordion__trigger_icon"></span>
 					</button>
-					<div class="accordion__body">
+					<div class="accordion__body js-accordion-body">
 						<div class="accordion__content">
 							<p>
 								Для якісного прибирання ми самостійно привозимо весь необхідний інвентар, професійні миючі та дезінфікуючі засоби. Від вас необхідно лише забезпечити доступ до приміщення у призначений час. Також просимо, за можливості, прибрати
@@ -1013,12 +1322,12 @@
 						</div>
 					</div>
 				</li>
-				<li class="accordion__item">
-					<button type="button" class="accordion__trigger js-accordion__trigger">
+				<li class="accordion__item js-accordion-item">
+					<button class="accordion__trigger js-accordion__trigger" type="button">
 						<span class="accordion__trigger_text">Чи можу я бути вдома під час прибирання?</span>
 						<span class="accordion__trigger_icon"></span>
 					</button>
-					<div class="accordion__body">
+					<div class="accordion__body js-accordion-body">
 						<div class="accordion__content">
 							<p>
 								Звісно, ви можете перебувати вдома під час прибирання, якщо вам так зручніше. Наші спеціалісти працюють максимально обережно, поважно ставляться до вашого простору та приватності. Якщо ж вам комфортніше залишити приміщення — ми
@@ -1027,12 +1336,12 @@
 						</div>
 					</div>
 				</li>
-				<li class="accordion__item">
-					<button type="button" class="accordion__trigger js-accordion__trigger">
+				<li class="accordion__item js-accordion-item">
+					<button class="accordion__trigger js-accordion__trigger" type="button">
 						<span class="accordion__trigger_text">Скільки часу триває прибирання?</span>
 						<span class="accordion__trigger_icon"></span>
 					</button>
-					<div class="accordion__body">
+					<div class="accordion__body js-accordion-body">
 						<div class="accordion__content">
 							<p>
 								Тривалість прибирання залежить від розміру приміщення, його стану та обраного пакету послуг. Наприклад, стандартне прибирання однокімнатної квартири зазвичай займає 2–3 години. Генеральне або післяремонтне прибирання може тривати
@@ -1042,12 +1351,12 @@
 						</div>
 					</div>
 				</li>
-				<li class="accordion__item">
-					<button type="button" class="accordion__trigger js-accordion__trigger">
+				<li class="accordion__item js-accordion-item">
+					<button class="accordion__trigger js-accordion__trigger" type="button">
 						<span class="accordion__trigger_text">За скільки днів до приїзду клінерів необхідно зробити замовлення?</span>
 						<span class="accordion__trigger_icon"></span>
 					</button>
-					<div class="accordion__body">
+					<div class="accordion__body js-accordion-body">
 						<div class="accordion__content">
 							<p>
 								Для зручного планування графіку ми рекомендуємо оформлювати замовлення за 1–2 дні до бажаної дати. Це дозволяє нам гарантовано забронювати зручний для вас час та підготувати необхідне обладнання. У разі термінової потреби ми також
@@ -1056,12 +1365,12 @@
 						</div>
 					</div>
 				</li>
-				<li class="accordion__item">
-					<button type="button" class="accordion__trigger js-accordion__trigger">
+				<li class="accordion__item js-accordion-item">
+					<button class="accordion__trigger js-accordion__trigger" type="button">
 						<span class="accordion__trigger_text">Які миючі засоби ви використовуєте?</span>
 						<span class="accordion__trigger_icon"></span>
 					</button>
-					<div class="accordion__body">
+					<div class="accordion__body js-accordion-body">
 						<div class="accordion__content">
 							<p>
 								Ми використовуємо сертифіковані, безпечні та екологічні миючі засоби, які ефективно справляються з забрудненнями та не завдають шкоди вашому здоров’ю, дітям, домашнім улюбленцям чи навколишньому середовищу. За необхідності
@@ -1072,236 +1381,6 @@
 					</div>
 				</li>
 			</ul>
-		</div>
-	</div>
-</section>
-
-<section class="gallery">
-	<div class="container">
-		<div class="wrapper">
-			<div class="heading">
-				<h2 class="heading__title">Виконаємо прибирання будь-якої складності</h2>
-				<h3 class="heading__subtitle">Подивіться як змінюється квартира навіть в найскладніших ситуаціях</h3>
-			</div>
-			<div class="gallery__swiper swiper">
-				<div class="swiper-wrapper">
-					<div class="gallery__slide gallery-slide swiper-slide">
-						<div class="gallery-slide__wrapper">
-							<div class="js-image-comparison">
-								<div class="gallery-slide__images" id="gallery-slide__images">
-									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_1.jpg" alt="Before image" />
-									<div class="gallery-slide__after_wrapp">
-										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_2.jpg" alt="After image" />
-									</div>
-									<div class="gallery-slide__handle">
-										<span class="gallery-slide__line"></span>
-										<span class="gallery-slide__button"></span>
-									</div>
-								</div>
-							</div>
-							<div class="gallery-slide__content">
-								<h4 class="gallery-slide__subtitle">Об'єкт: однокімнатна квартира</h4>
-								<div class="gallery-slide__description">
-									<p>
-										<strong>Пакет:</strong>
-										генеральне прибирання
-									</p>
-									<p>
-										<strong>Площа:</strong>
-										32 м²
-									</p>
-									<p>
-										<strong>Складні забруднення:</strong>
-										іржа, сильний наліт на ванні
-									</p>
-									<p>
-										<strong>Час роботи:</strong>
-										4 години
-									</p>
-									<p>
-										<strong>Бригада:</strong>
-										1 людинa
-									</p>
-								</div>
-								<span class="gallery-slide__label">Вартість: 2400₴</span>
-							</div>
-						</div>
-					</div>
-					<div class="gallery__slide gallery-slide swiper-slide">
-						<div class="gallery-slide__wrapper">
-							<div class="js-image-comparison">
-								<div class="gallery-slide__images" id="gallery-slide__images">
-									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_3.jpg" alt="Before image" />
-									<div class="gallery-slide__after_wrapp">
-										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_4.jpg" alt="After image" />
-									</div>
-									<div class="gallery-slide__handle">
-										<span class="gallery-slide__line"></span>
-										<span class="gallery-slide__button"></span>
-									</div>
-								</div>
-							</div>
-							<div class="gallery-slide__content">
-								<h4 class="gallery-slide__subtitle">Об'єкт: двокімнатна квартира</h4>
-								<div class="gallery-slide__description">
-									<p>
-										<strong>Пакет:</strong>
-										генеральне прибирання
-									</p>
-									<p>
-										<strong>Площа:</strong>
-										45 м²
-									</p>
-									<p>
-										<strong>Складні забруднення:</strong>
-										бруд на кухні, жир, що в'ївся
-									</p>
-									<p>
-										<strong>Час роботи:</strong>
-										5 годин
-									</p>
-									<p>
-										<strong>Бригада:</strong>
-										1 людинa
-									</p>
-								</div>
-								<span class="gallery-slide__label">Вартість: 3100₴</span>
-							</div>
-						</div>
-					</div>
-					<div class="gallery__slide gallery-slide swiper-slide">
-						<div class="gallery-slide__wrapper">
-							<div class="js-image-comparison">
-								<div class="gallery-slide__images" id="gallery-slide__images">
-									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_6.jpg" alt="Before image" />
-									<div class="gallery-slide__after_wrapp">
-										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_7.jpg" alt="After image" />
-									</div>
-									<div class="gallery-slide__handle">
-										<span class="gallery-slide__line"></span>
-										<span class="gallery-slide__button"></span>
-									</div>
-								</div>
-							</div>
-							<div class="gallery-slide__content">
-								<h4 class="gallery-slide__subtitle">Об'єкт: трикімнатна квартира</h4>
-								<div class="gallery-slide__description">
-									<p>
-										<strong>Пакет:</strong>
-										генеральне прибирання
-									</p>
-									<p>
-										<strong>Площа:</strong>
-										70 м²
-									</p>
-									<p>
-										<strong>Складні забруднення:</strong>
-										сліди жиру й забруднення на кухонній плитці
-									</p>
-									<p>
-										<strong>Час роботи:</strong>
-										3 години
-									</p>
-									<p>
-										<strong>Бригада:</strong>
-										2 людини
-									</p>
-								</div>
-								<span class="gallery-slide__label">Вартість: 5400₴</span>
-							</div>
-						</div>
-					</div>
-					<div class="gallery__slide gallery-slide swiper-slide">
-						<div class="gallery-slide__wrapper">
-							<div class="js-image-comparison">
-								<div class="gallery-slide__images" id="gallery-slide__images">
-									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_10.jpg" alt="Before image" />
-									<div class="gallery-slide__after_wrapp">
-										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_5.jpg" alt="After image" />
-									</div>
-									<div class="gallery-slide__handle">
-										<span class="gallery-slide__line"></span>
-										<span class="gallery-slide__button"></span>
-									</div>
-								</div>
-							</div>
-							<div class="gallery-slide__content">
-								<h4 class="gallery-slide__subtitle">Об'єкт: приватний 2х поверховий будинок</h4>
-								<div class="gallery-slide__description">
-									<p>
-										<strong>Пакет:</strong>
-										прибирання після ремонту
-									</p>
-									<p>
-										<strong>Площа:</strong>
-										230 м²
-									</p>
-									<p>
-										<strong>Складні забруднення:</strong>
-										велика кількість пилу і цементу на поверхнях
-									</p>
-									<p>
-										<strong>Час роботи:</strong>
-										11 годин
-									</p>
-									<p>
-										<strong>Бригада:</strong>
-										3 людини
-									</p>
-								</div>
-								<span class="gallery-slide__label">Вартість: 11200₴</span>
-							</div>
-						</div>
-					</div>
-					<div class="gallery__slide gallery-slide swiper-slide">
-						<div class="gallery-slide__wrapper">
-							<div class="js-image-comparison">
-								<div class="gallery-slide__images" id="gallery-slide__images">
-									<img class="gallery-slide__image" src="assets/images/dev/gallery/image_8.jpg" alt="Before image" />
-									<div class="gallery-slide__after_wrapp">
-										<img class="gallery-slide__image gallery-slide__image--after" src="assets/images/dev/gallery/image_9.jpg" alt="After image" />
-									</div>
-									<div class="gallery-slide__handle">
-										<span class="gallery-slide__line"></span>
-										<span class="gallery-slide__button"></span>
-									</div>
-								</div>
-							</div>
-							<div class="gallery-slide__content">
-								<h4 class="gallery-slide__subtitle">Об'єкт: однокімнатна квартира</h4>
-								<div class="gallery-slide__description">
-									<p>
-										<strong>Пакет:</strong>
-										генеральне прибирання
-									</p>
-									<p>
-										<strong>Площа:</strong>
-										30 м²
-									</p>
-									<p>
-										<strong>Складні забруднення:</strong>
-										багаторічний нагар на батареях
-									</p>
-									<p>
-										<strong>Час роботи:</strong>
-										3 години
-									</p>
-									<p>
-										<strong>Бригада:</strong>
-										1 людина
-									</p>
-								</div>
-								<span class="gallery-slide__label">Вартість: 2150₴</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-pagination"></div>
-				<div class="swiper-navigation">
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>

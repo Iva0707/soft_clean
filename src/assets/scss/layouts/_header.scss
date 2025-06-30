@@ -1,0 +1,178 @@
+.header {
+	position: relative;
+
+	padding-block: 1.8rem;
+
+	z-index: 4;
+	transition: background-color 0.2s ease;
+
+	&:has(.active) {
+		background-color: $white;
+	}
+}
+
+.header__wrapper {
+	display: flex;
+
+	@media (min-width: 1025px) {
+		align-items: center;
+		gap: 5rem;
+	}
+
+	@media (max-width: 1024px) {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}
+
+.header__top {
+	@media (max-width: 1024px) {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 5rem;
+
+		width: 100%;
+
+		z-index: 4;
+	}
+}
+
+.header-nav {
+	@media (min-width: 1025px) {
+		margin-left: auto;
+	}
+
+	@media (max-width: 1024px) {
+		position: absolute;
+		left: 50%;
+		top: 100%;
+
+		height: fit-content;
+		width: 100%;
+
+		background-color: $white;
+
+		z-index: 3;
+		transform: translate(-50%, -100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s ease-in, visibility 0.2s ease-in, transform 0.2s ease-in;
+
+		&.active {
+			box-shadow: 0 2rem 2rem -2rem rgba($black, 0.1);
+
+			opacity: 1;
+			visibility: visible;
+			transform: translate(-50%, 0);
+		}
+	}
+}
+
+.header-nav__list {
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+
+		height: 100%;
+		max-height: calc(100vh - 10rem);
+		margin-inline: 1rem;
+
+		overflow-y: auto;
+	}
+
+	@media (max-width: 1024px) and (min-width: 768px) {
+		padding: 2rem 5rem 4rem;
+	}
+
+	@media (max-width: 767px) {
+		padding: 1rem 2rem 2rem;
+	}
+}
+
+.header-nav__item {
+	flex: 1 0 auto;
+}
+
+.header-nav__contact_wrapp {
+	@media (max-width: 1024px) {
+		text-align: center;
+	}
+}
+
+.header-nav__phone {
+	display: block;
+	text-decoration: none;
+
+	@extend .h5;
+
+	font-weight: 600;
+
+	@media (max-width: 1024px) {
+		&:not(:last-child) {
+			margin-bottom: 0.8rem;
+		}
+	}
+}
+
+.header-nav__time {
+	display: block;
+
+	color: $gray;
+
+	@extend .text--small;
+}
+
+.header-nav__media_wrapp {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+}
+
+.header-nav__label {
+	@media (min-width: 1025px) {
+		max-width: 17rem;
+
+		text-align: right;
+	}
+
+	@media (max-width: 1024px) {
+		text-align: center;
+	}
+}
+
+.header-nav__media_list {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.header-nav__media_link {
+	display: inline-block;
+
+	transition: transform 0.2s;
+
+	&:hover,
+	&:focus-visible {
+		transform: scale(1.2);
+	}
+}
+
+.header-nav__media_image {
+	max-width: 3.2rem;
+
+	@include image-contain;
+}
+
+.header-nav__button {
+	letter-spacing: 0;
+}

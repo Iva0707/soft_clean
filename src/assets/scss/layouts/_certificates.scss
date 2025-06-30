@@ -1,0 +1,10 @@
+.certificates__slide_wrapper {
+	display: block;
+
+	width: 100%;
+	height: auto;
+}
+
+.certificates__slide_image {
+	@include image-cover;
+}

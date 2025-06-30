@@ -1,4 +1,7 @@
 .hero {
+	margin-top: -10rem;
+	padding-top: 15rem;
+
 	@media (min-width: 768px) {
 		background: url("../images/dev/hero/image_1.png") center / cover no-repeat;
 	}
@@ -19,7 +22,7 @@
 	}
 }
 
-.hero__content {
+.hero__wrapper {
 	position: relative;
 
 	@media (min-width: 768px) {

@@ -135,26 +135,49 @@
 // 	}
 // };
 
-// let _slideToggle = (target, duration = 500) => {
-// 	if (target.hidden) {
-// 		return _slideDown(target, duration);
-// 	} else {
-// 		return _slideUp(target, duration);
-// 	}
-// };
+// ____________ utils ____________________
+
+const resize = (callback, { callOnInit = true, debounceTime = 15 } = {}) => {
+	if (!callback || typeof callback !== "function") return;
+
+	const onResize = debounceTime > 0 ? debounce(debounceTime, () => callback(getWindowSize())) : () => callback(getWindowSize());
+
+	window.addEventListener("resize", onResize);
+
+	if (callOnInit) callback(getWindowSize());
+
+	return () => window.removeEventListener("resize", onResize);
+};
+
+const getWindowSize = () => {
+	return {
+		windowWidth: window.innerWidth,
+		windowHeight: window.innerHeight,
+	};
+};
+
+const debounce = (delay, fn) => {
+	let timerId;
+	return (...args) => {
+		if (timerId) clearTimeout(timerId);
+		timerId = setTimeout(() => {
+			fn(...args);
+			timerId = null;
+		}, delay);
+	};
+};
+
 // ____________ accordion ____________________
 
 const accordion = ({ triggers, activeStateName, allowMultiple = false }) => {
 	if (!triggers?.length) return;
 
 	const toggleItem = ($trigger) => {
-		const $parentEl = $trigger.closest(".accordion__item");
-		const $bodyEl = $parentEl.querySelector(".accordion__body");
+		const $parentEl = $trigger.closest(".js-accordion-item");
+		const $bodyEl = $parentEl.querySelector(".js-accordion-body");
 		const isActive = $parentEl.classList.contains(activeStateName);
 
-		if (!allowMultiple) {
-			closeAll();
-		}
+		if (!allowMultiple) closeAll();
 
 		if (!isActive) {
 			$parentEl.classList.add(activeStateName);
@@ -167,25 +190,33 @@ const accordion = ({ triggers, activeStateName, allowMultiple = false }) => {
 
 	const closeAll = () => {
 		triggers.forEach(($item) => {
-			const $parentEl = $item.closest(".accordion__item");
-			const $bodyEl = $parentEl.querySelector(".accordion__body");
+			const $parentEl = $item.closest(".js-accordion-item");
+			const $bodyEl = $parentEl.querySelector(".js-accordion-body");
 			$parentEl.classList.remove(activeStateName);
 			$bodyEl.style.maxHeight = null;
 		});
 	};
 
+	const updateOpenHeights = () => {
+		triggers.forEach(($trigger) => {
+			const $parentEl = $trigger.closest(".js-accordion-item");
+			const $bodyEl = $parentEl.querySelector(".js-accordion-body");
+			if ($parentEl.classList.contains(activeStateName)) {
+				$bodyEl.style.maxHeight = $bodyEl.scrollHeight + "px";
+			}
+		});
+	};
+
 	triggers.forEach(($trigger) => {
 		$trigger.addEventListener("click", () => toggleItem($trigger));
-
-		const $parentEl = $trigger.closest(".accordion__item");
-		const $bodyEl = $parentEl.querySelector(".accordion__body");
-		if ($parentEl.classList.contains(activeStateName)) {
-			$bodyEl.style.maxHeight = $bodyEl.scrollHeight + "px";
-		}
 	});
+
+	updateOpenHeights();
+
+	resize(updateOpenHeights);
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+const initAccordion = () => {
 	const SELECTORS = {
 		wrapper: ".js-accordion",
 		trigger: ".js-accordion__trigger",
@@ -203,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			allowMultiple: false,
 		});
 	});
-});
+};
 
 // ____________ tabs ____________________
 
@@ -237,7 +268,7 @@ const tabs = ({ triggers, contents }) => {
 	});
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+const initTabs = () => {
 	const SELECTORS = {
 		wrapper: ".js-tabs",
 		trigger: ".js-tabs-trigger",
@@ -253,52 +284,48 @@ document.addEventListener("DOMContentLoaded", () => {
 			contents: $contents,
 		});
 	});
-});
+};
 
-// ____________ swiper ____________________
+// ____________ gallery swiper ____________________
 
-const swiper = new Swiper(".gallery__swiper", {
-	spaceBetween: 18,
-	slidesPerView: "auto",
-	loop: true,
-	spaceBetween: 20,
-	allowTouchMove: false,
-	autoHeight: true,
-
-	keyboard: {
-		enabled: true,
-	},
-
-	mouse: {
-		enabled: true,
-	},
-
-	pagination: {
-		el: ".swiper-pagination",
-		clickable: true,
-	},
-
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
-
-	breakpoints: {
-		768: {
-			spaceBetween: 60,
+const initGallerySwiper = () => {
+	new Swiper(".js-gallery-swiper", {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		allowTouchMove: false,
+		autoHeight: true,
+		keyboard: {
+			enabled: true,
 		},
-	},
-});
+		mouse: {
+			enabled: true,
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			768: {
+				spaceBetween: 60,
+			},
+		},
+	});
+};
 
 // ____________ slide cards ____________________
 
-const imageComparisonSlider = ({ containers }) => {
+const imageGallery = ({ containers }) => {
 	if (!containers?.length) return;
 
 	containers.forEach(($container) => {
-		const $slider = $container.querySelector(".gallery-slide__images");
-		const $afterWrapper = $container.querySelector(".gallery-slide__after_wrapp");
-		const $handle = $container.querySelector(".gallery-slide__handle");
+		const $slider = $container.querySelector(".js-gallery-slide-images");
+		const $afterWrapper = $container.querySelector(".js-gallery-slide-after");
+		const $handle = $container.querySelector(".js-gallery-slide-handle");
 
 		if (!$slider || !$afterWrapper || !$handle) return;
 
@@ -342,14 +369,118 @@ const imageComparisonSlider = ({ containers }) => {
 	});
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+const initImageGallery = () => {
 	const SELECTORS = {
-		wrapper: ".js-image-comparison",
+		wrapper: ".js-image-gallery",
 	};
 
 	const $sliders = document.querySelectorAll(SELECTORS.wrapper);
 
-	imageComparisonSlider({
+	imageGallery({
 		containers: $sliders,
 	});
-});
+};
+
+// ____________ gallery swiper ____________________
+
+const initCertificatesSwiper = () => {
+	new Swiper(".js-certificates-swiper", {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		autoHeight: true,
+		keyboard: {
+			enabled: true,
+		},
+		mouse: {
+			enabled: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			480: {
+				spaceBetween: 20,
+				slidesPerView: 2,
+			},
+			768: {
+				spaceBetween: 40,
+				slidesPerView: 3,
+			},
+		},
+	});
+};
+// ____________ burger ____________________
+
+const burger = ({ header, burger, menu }) => {
+	if (!header || !burger || !menu) return;
+
+	const toggleClasses = () => {
+		burger.classList.toggle("active");
+		menu.classList.toggle("active");
+		document.body.classList.toggle("scroll-lock");
+		document.body.classList.toggle("body-overflow");
+	};
+
+	const closeMenu = () => {
+		burger.classList.remove("active");
+		menu.classList.remove("active");
+		document.body.classList.remove("scroll-lock");
+		document.body.classList.remove("body-overflow");
+	};
+
+	burger.addEventListener("click", (event) => {
+		event.preventDefault();
+		toggleClasses();
+		window.scrollTo(0, 0);
+	});
+
+	document.addEventListener("click", (event) => {
+		const isClickInsideHeader = header.contains(event.target);
+		const isMenuActive = menu.classList.contains("active");
+
+		if (!isClickInsideHeader && isMenuActive) {
+			closeMenu();
+		}
+	});
+
+	resize(({ windowWidth }) => {
+		if (windowWidth > 1024) {
+			closeMenu();
+		}
+	});
+};
+
+const initBurger = () => {
+	const SELECTORS = {
+		header: ".js-header",
+		burger: ".js-burger",
+		menu: ".js-header-nav",
+	};
+
+	const header = document.querySelector(SELECTORS.header);
+	const burgerTrigger = document.querySelector(SELECTORS.burger);
+	const menu = document.querySelector(SELECTORS.menu);
+
+	burger({
+		header,
+		burger: burgerTrigger,
+		menu,
+	});
+};
+
+// ____________ main ____________________
+
+const main = () => {
+	initAccordion();
+	initTabs();
+	initGallerySwiper();
+	initCertificatesSwiper();
+	initImageGallery();
+	initBurger();
+};
+
+window.onload = () => {
+	main();
+};

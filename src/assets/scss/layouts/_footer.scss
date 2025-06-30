@@ -60,6 +60,17 @@
 	}
 }
 
+.footer__link {
+	display: inline-block;
+
+	transition: transform 0.2s;
+
+	&:hover,
+	&:focus-visible {
+		transform: scale(1.2);
+	}
+}
+
 .footer__autor {
 	display: inline-block;
 

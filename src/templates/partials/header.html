@@ -1,7 +1,46 @@
-<header class="header">
+<header class="header js-header">
 	<div class="container">
-		<div class="wrapper">
-
+		<div class="header__wrapper">
+			<div class="header__top">
+				<a href="index.html" class="header__logo_link">
+					<img class="header__logo" src="./assets/images/dev/svg/logo.svg" alt="Logo" />
+				</a>
+				<button class="burger js-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<nav class="header__nav header-nav js-header-nav">
+				<ul class="header-nav__list">
+					<li class="header-nav__item">
+						<div class="header-nav__contact_wrapp">
+							<a class="header-nav__phone" href="tel:+380954340403">+38 (095) 434 04 03</a>
+							<span class="header-nav__time">Пн-Нд: 9:00 - 21:00</span>
+						</div>
+					</li>
+					<li class="header-nav__item">
+						<div class="header-nav__media_wrapp">
+							<span class="header-nav__label">Швидкий зв'язок з нами в месенджерах:</span>
+							<ul class="header-nav__media_list">
+								<li>
+									<a href="#" class="header-nav__media_link header-nav__media_link--telegram">
+										<img class="header-nav__media_image" src="./assets/images/dev/svg/telegram.svg" alt="Telegram" />
+									</a>
+								</li>
+								<li>
+									<a href="#" class="header-nav__media_link header-nav__media_link--whatsapp">
+										<img class="header-nav__media_image" src="./assets/images/dev/svg/WhatsApp.svg" alt="WhatsApp" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="header-nav__item">
+						<button class="button button--overline button--small header-nav__button" type="button">Замовити консультацію</button>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 </header>

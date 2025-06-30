@@ -2,16 +2,16 @@
 	margin: 0 auto;
 
 	@media (min-width: 768px) {
-		max-width: calc(1024px + 100px);
-		padding: 0 50px;
+		max-width: 112.4rem;
+		padding: 0 5rem;
 	}
 
 	@media (max-width: 767px) {
 		max-width: 100%;
-		padding: 0 20px;
+		padding: 0 2rem;
 	}
 }
 
 .scroll-lock {
-	overflow: hidden; // was
+	overflow: hidden;
 }
