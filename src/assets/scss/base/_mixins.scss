@@ -38,6 +38,15 @@
 	transform: translateY(-50%);
 }
 
+@mixin pseudo-x-center {
+	position: absolute;
+	top: 0;
+	left: 50%;
+
+	content: "";
+	transform: translateX(-50%);
+}
+
 @mixin pseudo-left-top {
 	position: absolute;
 	top: 0;
@@ -55,42 +64,6 @@
 
 	content: "";
 }
-
-// transitions
-@mixin transition_opacity {
-	transition: opacity 0.2s ease;
-	will-change: opacity;
-}
-
-@mixin transition_background {
-	transition: background 0.2s ease;
-	will-change: background;
-}
-
-// @mixin transition_all {
-// 	transition: all 0.2s ease;
-// 	will-change: transform;
-// }
-
-// @mixin transition_color {
-// 	transition: color 0.2s ease;
-// 	will-change: color;
-// }
-
-// @mixin transition_color_background {
-// 	transition: color 0.2s ease, background 0.2s ease;
-// 	will-change: color, background;
-// }
-
-// @mixin transition_transform {
-// 	transition: transform 0.2s ease;
-// 	will-change: transform;
-// }
-
-// @mixin tranisition_fill {
-// 	transition: fill 0.2s ease;
-// 	will-change: fill;
-// }
 
 //others
 @mixin card-style {
@@ -135,6 +108,7 @@
 
 		background-color: darken($fill-color, 10%);
 
+		will-change: background-color;
 		transition: background-color 0.2s, width 0.2s;
 		z-index: -1;
 	}

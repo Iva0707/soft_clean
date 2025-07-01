@@ -75,6 +75,7 @@
 	&.footer__link--media {
 		display: inline-block;
 
+		will-change: transform;
 		transition: transform 0.2s;
 
 		&:hover,

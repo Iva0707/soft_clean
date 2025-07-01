@@ -12,7 +12,7 @@
 	width: fit-content;
 	margin-inline: auto;
 
-	border-radius: 10rem;
+	border-radius: $border-100;
 
 	@media (min-width: 768px) {
 		background-color: $white;
@@ -28,6 +28,7 @@
 .presentation__nav_btn {
 	color: $black_1;
 
+	will-change: color, background-color;
 	transition: color 0.2s, background-color 0.2s;
 
 	&[data-active] {
@@ -57,7 +58,7 @@
 	max-width: 100%;
 	aspect-ratio: 16/9;
 
-	border-radius: 3rem;
+	border-radius: $border-30;
 
 	overflow: hidden;
 }

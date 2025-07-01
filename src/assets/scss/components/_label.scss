@@ -30,10 +30,11 @@
 	background-color: $white;
 
 	border: 4px solid $blue;
-	border-radius: 50%;
 
 	box-shadow: 0 2px 4px 0px $blue;
 	transform: translate(-50%, 0);
+
+	@include image-round;
 
 	&.label__dot--left {
 		top: 50%;
@@ -85,7 +86,7 @@
 
 	background: $white;
 
-	border-radius: 2rem;
+	border-radius: $border-20;
 
 	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
 
@@ -102,6 +103,7 @@
 		@media (max-width: 767px) {
 			opacity: 0;
 
+			will-change: opacity;
 			transition: opacity 0.2s;
 		}
 	}

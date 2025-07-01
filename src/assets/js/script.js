@@ -470,6 +470,67 @@ const initBurger = () => {
 	});
 };
 
+// ____________ navigation ____________________
+
+gsap.registerPlugin(ScrollTrigger);
+
+const stickyNav = () => {
+	const navSection = document.querySelector(".js-navigation");
+	const navLinks = document.querySelectorAll(".js-navigation-link");
+
+	if (!navSection || !navLinks.length) return;
+
+	ScrollTrigger.create({
+		trigger: navSection,
+		start: "top top",
+		end: 99999,
+		toggleClass: {
+			targets: navSection,
+			className: "navigation--sticky",
+		},
+	});
+
+	const sections = [...navLinks]
+		.map((link) => {
+			const id = link.getAttribute("href")?.replace("#", "");
+			const section = document.getElementById(id);
+			return section ? { link, section } : null;
+		})
+		.filter(Boolean);
+
+	sections.forEach(({ link, section }, index) => {
+		const isLast = index === sections.length - 1;
+
+		ScrollTrigger.create({
+			trigger: section,
+			start: isLast ? "top bottom-=100" : "top center+=100",
+			end: isLast ? "bottom bottom" : "bottom center-=100",
+			onEnter: () => setActiveLink(link),
+			onEnterBack: () => setActiveLink(link),
+			onUpdate: (self) => {
+				if (self.isActive) setActiveLink(link);
+			},
+			refreshPriority: -1,
+		});
+	});
+
+	function setActiveLink(activeLink) {
+		document.querySelectorAll(".js-navigation-item").forEach((item) => item.classList.remove("navigation__item--active"));
+		const parentItem = activeLink.closest(".js-navigation-item");
+		if (parentItem) parentItem.classList.add("navigation__item--active");
+	}
+
+	resize(() => {
+		ScrollTrigger.refresh(true);
+	});
+
+	window.addEventListener("load", () => {
+		setTimeout(() => {
+			ScrollTrigger.refresh(true);
+		}, 100);
+	});
+};
+
 // ____________ main ____________________
 
 const main = () => {
@@ -479,6 +540,7 @@ const main = () => {
 	initCertificatesSwiper();
 	initImageGallery();
 	initBurger();
+	stickyNav();
 };
 
 window.onload = () => {

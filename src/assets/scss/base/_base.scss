@@ -26,6 +26,7 @@ body {
 		opacity: 0;
 
 		z-index: -1;
+		will-change: backdrop-filter;
 		transition: backdrop-filter 0.2s 0.1s, -webkit-backdrop-filter 0.2s 0.1s, background-color 0.2s 0.1s;
 
 		@include pseudo-full;
@@ -63,8 +64,8 @@ section {
 
 	&.section--curved_out_top,
 	&.section--curved_in_top {
-		@media (min-width: 768px) {
-			&::before {
+		&::before {
+			@media (min-width: 768px) {
 				position: absolute;
 				top: -1px;
 				left: 0;
@@ -82,11 +83,15 @@ section {
 	}
 
 	&.section--curved_out_top {
-		padding-top: 11rem;
+		@media (min-width: 768px) {
+			padding-top: 11rem;
+		}
 
 		&::before {
-			background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1920 101' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1920V101C1920 101 1474 25 958 25C442 25 0 101 0 101V0Z' fill='white'/%3E%3C/svg%3E%0A")
-				no-repeat top center;
+			@media (min-width: 768px) {
+				background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1920 101' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1920V101C1920 101 1474 25 958 25C442 25 0 101 0 101V0Z' fill='white'/%3E%3C/svg%3E%0A")
+					no-repeat top center;
+			}
 		}
 	}
 
@@ -94,18 +99,26 @@ section {
 		@media (min-width: 768px) {
 			padding-top: 13rem;
 			margin-top: -2rem;
+		}
 
-			&::before {
+		&::before {
+			@media (min-width: 768px) {
 				background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1914 80' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M1 1.46839C752.06 105.316 1170.71 105.705 1913 1.46839H1Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A")
 					no-repeat top center;
+			}
+		}
+
+		&.advantages {
+			@media (min-width: 1025px) {
+				margin-top: 4rem;
 			}
 		}
 	}
 
 	&.section--curved_out_bottom,
 	&.section--curved_in_bottom {
-		@media (min-width: 768px) {
-			&::after {
+		&::after {
+			@media (min-width: 768px) {
 				position: absolute;
 				bottom: -1px;
 				left: 0;
@@ -123,11 +136,15 @@ section {
 	}
 
 	&.section--curved_out_bottom {
-		padding-bottom: 11rem;
+		@media (min-width: 768px) {
+			padding-bottom: 11rem;
+		}
 
 		&::after {
-			background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1920 101' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1920 0V101H0V0C0 0 442 76 958 76C1474 76 1920 0 1920 0Z' fill='white'/%3E%3C/svg%3E%0A")
-				no-repeat top center;
+			@media (min-width: 768px) {
+				background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1920 101' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1920 0V101H0V0C0 0 442 76 958 76C1474 76 1920 0 1920 0Z' fill='white'/%3E%3C/svg%3E%0A")
+					no-repeat top center;
+			}
 		}
 	}
 
@@ -135,8 +152,10 @@ section {
 		@media (min-width: 768px) {
 			padding-bottom: 13rem;
 			margin-bottom: -2rem;
+		}
 
-			&::after {
+		&::after {
+			@media (min-width: 768px) {
 				background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1914 80' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M1 79.5001C752.06 -24.3471 1170.71 -24.7368 1913 79.5001H1Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A")
 					no-repeat top center;
 			}
@@ -159,6 +178,7 @@ a:not(.button) {
 
 	text-underline-offset: 4px;
 
+	will-change: color;
 	transition: color 0.2s;
 
 	&:hover {
@@ -274,6 +294,10 @@ input {
 		}
 	}
 
+	&.input--small {
+		min-height: 5.6rem;
+	}
+
 	&:hover,
 	&:focus-visible {
 		outline: none;
@@ -300,15 +324,21 @@ input {
 
 	.checkbox__input {
 		position: absolute;
-		z-index: -1;
+		top: 0;
+		left: 0;
+
+		height: 0.1rem;
+		width: 0.1rem;
 
 		opacity: 0;
+		pointer-events: auto;
+		z-index: 2;
 	}
 
 	.checkbox__title {
-		display: inline-block;
-
 		position: relative;
+
+		display: inline-block;
 
 		padding-left: 2.6rem;
 
@@ -328,7 +358,8 @@ input {
 			border: 1px solid $yellow;
 			border-radius: 4px;
 
-			@include transition_background;
+			will-change: background;
+			transition: background 0.2s ease;
 		}
 
 		&::after {
@@ -341,16 +372,17 @@ input {
 
 			opacity: 0;
 
-			@include transition_opacity;
+			will-change: opacity;
+			transition: opacity 0.2s ease;
 		}
-	}
-
-	.checkbox__input:checked + .checkbox__title::after {
-		opacity: 1;
 	}
 
 	.checkbox__input:checked + .checkbox__title::before {
 		background-color: $yellow;
+	}
+
+	.checkbox__input:checked + .checkbox__title::after {
+		opacity: 1;
 	}
 }
 
@@ -360,14 +392,15 @@ input {
 // 3. Семантика
 // + Выделение цветом
 // + Политика
-// 6. Возможно смена языка
-// 7. Попробовать закрепить навигацию
-// 8. Миксины радиуса и транзишн
-// 9. Линк бланк
+// - Возможно смена языка
+// + Попробовать закрепить навигацию
+// + Миксины радиуса и транзишн
+// + Линк бланк
 // 10. Переписать transform на новый стиль
-// 11. Навести порядок в dev изображениях
+// + Навести порядок в dev изображениях
 // 12. Перенести типограцию и сделать через @include
-// 13. Анимация числа
+// - Анимация числа
 // 14. Навести порядок в типографии
 // 15. Разнести base
-// 16. Контакт
+// + Контакт
+// 17. Проверить бем

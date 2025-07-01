@@ -1,4 +1,16 @@
 .navigation {
+	padding-block: 2rem;
+
+	&.navigation--sticky {
+		position: sticky;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+
+		z-index: 10;
+	}
+
 	@media (max-width: 1024px) {
 		display: none;
 	}

@@ -1,0 +1,191 @@
+.contact {
+	background-color: $blue_1;
+}
+
+.contact__content_wrapper {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	@media (min-width: 1025px) {
+		gap: 6rem;
+	}
+
+	@media (max-width: 1024px) {
+		gap: 4rem;
+	}
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.contact__column {
+	flex: 0 1 50%;
+
+	width: 100%;
+
+	&.contact__column--content {
+		@include card-style;
+
+		@media (max-width: 767px) {
+			text-align: center;
+		}
+	}
+}
+
+.contact__info_description {
+	display: inline-block;
+
+	width: 100%;
+
+	text-align: left;
+
+	@extend h5;
+
+	&:not(:last-child) {
+		@media (min-width: 768px) {
+			margin-bottom: 2rem;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.contact__row {
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	&.contact__row--media {
+		display: flex;
+		align-items: center;
+
+		@media (min-width: 768px) {
+			gap: 1rem;
+		}
+
+		@media (max-width: 767px) {
+			gap: 2rem;
+		}
+
+		&:not(:last-child) {
+			@media (min-width: 768px) {
+				margin-bottom: 2rem;
+			}
+
+			@media (max-width: 767px) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+.contact__info_item {
+	@extend .h4;
+
+	font-weight: 500;
+
+	&:not(:last-child) {
+		margin-bottom: 0.6rem;
+	}
+
+	& a {
+		text-decoration: none;
+	}
+}
+
+.contact__info_link,
+.contact__info_span {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.8rem;
+
+	& img {
+		width: 2rem;
+		height: 2rem;
+	}
+}
+
+.contact__media_item {
+	flex: 0 1 50%;
+
+	border-radius: $border-20;
+
+	overflow: hidden;
+
+	will-change: background-color;
+	transition: background-color 0.2s;
+
+	@media (min-width: 768px) {
+		height: 5.2rem;
+	}
+
+	@media (max-width: 767px) {
+		height: 4rem;
+	}
+
+	&.contact__media_item--telegram {
+		background-color: $blue;
+
+		&:hover,
+		&:focus-visible {
+			background-color: darken($blue, 10%);
+		}
+	}
+
+	&.contact__media_item--whatsapp {
+		background-color: $green_2;
+
+		&:hover,
+		&:focus-visible {
+			background-color: darken($green_2, 10%);
+		}
+	}
+}
+
+.contact__media_link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+}
+
+.contact__media_image {
+	width: 100%;
+	max-width: 3rem;
+
+	@include image-contain;
+}
+
+.contact__form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.contact__description {
+	text-align: center;
+	color: $gray;
+
+	@extend .h5;
+
+	@media (max-width: 767px) {
+		font-weight: 500;
+	}
+
+	& strong {
+		font-weight: inherit;
+		color: $blue;
+	}
+}

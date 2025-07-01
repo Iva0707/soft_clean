@@ -82,8 +82,8 @@
 
 		&::after {
 			border: 1px solid $gray_1;
-			border-radius: 50%;
 
+			@include image-round;
 			@include pseudo-center;
 
 			@media (min-width: 768px) {
@@ -100,8 +100,7 @@
 		&::before {
 			background-color: $blue;
 
-			border-radius: 50%;
-
+			@include image-round;
 			@include pseudo-center;
 
 			@media (min-width: 768px) {

@@ -41,7 +41,7 @@
 
 	width: var(--gallery-slide-content--width);
 
-	border-radius: 3rem;
+	border-radius: $border-30;
 	cursor: col-resize;
 	overflow: hidden;
 
@@ -129,12 +129,13 @@
 
 	background: $yellow;
 
-	border-radius: 50%;
 	box-shadow: inset 0 4px 1rem 0 rgba($white, 0.3);
 
 	z-index: 4;
 	cursor: ew-resize;
 	transform: translateY(-50%);
+
+	@include image-round;
 
 	@media (min-width: 768px) {
 		left: calc(50% - 3.1rem);

@@ -35,9 +35,10 @@ title: Home
 	</div>
 </section>
 
-<section class="why-us" id="why-us">
+<section class="why-us">
 	<div class="container">
 		<div class="why-us__wrapper">
+			<div class="heading"></div>
 			<ul class="why-us__list">
 				<li class="why-us__item">
 					<article class="why-us-item">
@@ -57,7 +58,7 @@ title: Home
 				</li>
 				<li class="why-us__item why-us__item--3">
 					<article class="why-us-item">
-						<span class="why-us-item__description">Дотримуємося санітарних норм</span>
+						<span class="why-us-item__description">Дотримання санітарних норм</span>
 						<div class="why-us-item__image_wrapper">
 							<img src="assets/images/dev/why-us/image_3.png" alt="Image" class="why-us-item__image" />
 						</div>
@@ -76,34 +77,34 @@ title: Home
 	</div>
 </section>
 
-<section class="navigation">
+<section class="navigation js-navigation">
 	<div class="container">
 		<div class="navigation__wrapper">
 			<ul class="navigation__list">
-				<li class="navigation__item">
-					<a href="#services" class="navigation__link">Послуги</a>
+				<li class="navigation__item navigation__item--active js-navigation-item">
+					<a href="#advantages" class="navigation__link js-navigation-link">Чому ми</a>
 				</li>
-				<li class="navigation__item">
-					<a href="#calculation" class="navigation__link">Розрахувати вартість</a>
+				<li class="navigation__item js-navigation-item">
+					<a href="#services" class="navigation__link js-navigation-link">Послуги</a>
 				</li>
-				<li class="navigation__item navigation__item--active">
-					<a href="#why-us" class="navigation__link">Чому ми</a>
+				<li class="navigation__item js-navigation-item">
+					<a href="#presentation" class="navigation__link js-navigation-link">Як ми робимо прибирання</a>
 				</li>
-				<li class="navigation__item">
-					<a href="#gallery" class="navigation__link">Як ми робимо прибирання</a>
+				<li class="navigation__item js-navigation-item">
+					<a href="#calculation" class="navigation__link js-navigation-link">Розрахувати вартість</a>
 				</li>
-				<li class="navigation__item">
-					<a href="#gift" class="navigation__link">Акції</a>
+				<li class="navigation__item js-navigation-item">
+					<a href="#gift" class="navigation__link js-navigation-link">Акції</a>
 				</li>
-				<li class="navigation__item">
-					<a href="" class="navigation__link">Контакти</a>
+				<li class="navigation__item js-navigation-item">
+					<a href="#contact" class="navigation__link js-navigation-link">Контакти</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 </section>
 
-<section class="advantages section--curved_in_top">
+<section class="advantages section--curved_in_top" id="advantages">
 	<div class="container">
 		<div class="advantages__wrapper">
 			<div class="heading">
@@ -170,7 +171,7 @@ title: Home
 				<li class="advantages__item">
 					<article class="card card--blue">
 						<div class="card__text_wrapp card__image_wrapp--full">
-							<h4 class="card__title">Друзі, Будьте уважні!</h4>
+							<h4 class="card__title">Друзі, будьте уважні!</h4>
 							<div class="card__text">
 								<p>При виборі клінінгової компанії і замовленні прибирання, уважно читайте договір на надання послуг.</p>
 							</div>
@@ -246,14 +247,14 @@ title: Home
 				</span>
 				<form class="apply-banner__form" action="#">
 					<div class="apply-banner__form_row">
-						<input class="apply-banner_input" required type="tel" placeholder="Введіть ваш телефон" />
+						<input class="apply-banner_input" required type="tel" name="phoneNumber" placeholder="Введіть ваш телефон" />
 						<button class="button button--yellow apply-banner__button" type="submit">Чекаю на дзвінок</button>
 					</div>
 					<label class="checkbox apply-banner__checkbox">
-						<input required class="checkbox__input" type="checkbox" name="" />
+						<input required class="checkbox__input" type="checkbox" name="yes" tabindex="0" />
 						<span class="checkbox__title">
 							Натискаючи на кнопку ви погоджуєтеся з умовами
-							<a href="#">Політики конфіденційності</a>
+							<a href="./policy.html" target="_blank">Політики конфіденційності</a>
 						</span>
 					</label>
 				</form>
@@ -543,7 +544,7 @@ title: Home
 	</div>
 </section>
 
-<section class="presentation section--curved_in_bottom section--curved_in_top js-tabs">
+<section class="presentation section--curved_in_bottom section--curved_in_top js-tabs" id="presentation">
 	<div class="container">
 		<div class="presentation__wrapper">
 			<div class="heading">
@@ -800,7 +801,7 @@ title: Home
 	</div>
 </section>
 
-<section class="gallery" id="gallery">
+<section class="gallery">
 	<div class="container">
 		<div class="gallery__wrapper">
 			<div class="heading">
@@ -1042,17 +1043,20 @@ title: Home
 					<span class="calculation__description">Клікніть на зручний спосіб зв'язку і напишіть нам:</span>
 					<ul class="calculation__media">
 						<li class="calculation__media_item calculation__media_item--telegram">
-							<a class="calculation__media_link" href="#">
+							<a class="calculation__media_link" target="_blank" href="https://t.me/iva_tkachuk">
 								<img src="assets/images/dev/svg/telegram-2.svg" alt="Telegram" class="calculation__media_image" />
 							</a>
 						</li>
 						<li class="calculation__media_item calculation__media_item--whatsapp">
-							<a class="calculation__media_link" href="#">
+							<a class="calculation__media_link" target="_blank" href="https://wa.me/380954340403">
 								<img src="assets/images/dev/svg/whatsApp-2.svg" alt="WhatsApp" class="calculation__media_image" />
 							</a>
 						</li>
 					</ul>
-					<span class="calculation__time">Швидкість відповіді 60 секунд</span>
+					<span class="calculation__time">
+						<img src="assets/images/dev/svg/time.svg" alt="Time icon" />
+						Швидкість відповіді 60 секунд
+					</span>
 				</div>
 			</div>
 			<div class="calculation__column calculation__column--image">
@@ -1128,13 +1132,13 @@ title: Home
 							<img class="inventory-item__image" src="assets/images/dev/inventory/image_5.png" alt="Image" />
 						</div>
 						<form class="inventory-item__form">
-							<input class="inventory-item_input" required type="tel" placeholder="Введіть ваш телефон" />
-							<button class="button button--yellow inventory-item_button" type="submit">Замовити прибирання</button>
+							<input required type="tel" name="phoneNumber" placeholder="Введіть ваш телефон" />
+							<button class="button button--yellow" type="submit">Замовити прибирання</button>
 							<label class="checkbox inventory-item__checkbox">
-								<input required class="checkbox__input" type="checkbox" name="" />
+								<input required class="checkbox__input" type="checkbox" name="yes" />
 								<span class="checkbox__title">
 									Натискаючи на кнопку ви погоджуєтеся з умовами
-									<a href="#">Політики конфіденційності</a>
+									<a href="./policy.html" target="_blank">Політики конфіденційності</a>
 								</span>
 							</label>
 						</form>
@@ -1325,6 +1329,75 @@ title: Home
 					</div>
 				</li>
 			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="contact section--curved_in_top section--curved_in_bottom" id="contact">
+	<div class="container">
+		<div class="contact__wrapper">
+			<div class="heading">
+				<h2 class="heading__title">Звʼяжіться з нами у зручний для вас спосіб</h2>
+				<h3 class="heading__subtitle heading__subtitle--full">Або залиште номер і ми вам передзвонимо</h3>
+			</div>
+			<div class="contact__content_wrapper">
+				<div class="contact__column contact__column--content">
+					<ul class="contact__row contact__row--info">
+						<span class="contact__info_description">Ми завжди на звʼязку для вас:</span>
+						<li class="contact__info_item contact__info_item--phone">
+							<a class="contact__info_link" href="tel:+380954340403">
+								<img src="assets/images/svg/phone.svg" alt="Phone" />
+								+38 (095) 434 04 03
+							</a>
+						</li>
+						<li class="contact__info_item contact__info_item--mail">
+							<a class="contact__info_link" href="mailto:info@softclean.com">
+								<img src="assets/images/svg/mail.svg" alt="Mail" />
+								info@softclean.com
+							</a>
+						</li>
+						<li class="contact__info_item contact__info_item--time">
+							<span class="contact__info_span">
+								<img src="assets/images/svg/time.svg" alt="" />
+								Пн-Нд: 9:00 - 21:00
+							</span>
+						</li>
+					</ul>
+
+					<ul class="contact__row contact__row--media">
+						<li class="contact__media_item contact__media_item--telegram">
+							<a class="contact__media_link" href="https://t.me/iva_tkachuk" target="_blank">
+								<img src="assets/images/dev/svg/telegram-2.svg" alt="Telegram" class="contact__media_image" />
+							</a>
+						</li>
+						<li class="contact__media_item contact__media_item--whatsapp">
+							<a class="contact__media_link" href="https://wa.me/380954340403" target="_blank">
+								<img src="assets/images/dev/svg/whatsApp-2.svg" alt="WhatsApp" class="contact__media_image" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="contact__column contact__column--form">
+					<form class="contact__form">
+						<input class="input--small contact__input" required type="tel" name="phoneNumber" placeholder="Введіть ваш телефон" />
+						<button class="button button--yellow button--small contact__button" type="submit">Чекаю на дзвінок</button>
+						<label class="checkbox contact__checkbox">
+							<input required class="checkbox__input" type="checkbox" name="yes" />
+							<span class="checkbox__title">
+								Натискаючи на кнопку ви погоджуєтеся з умовами
+								<a href="./policy.html" target="_blank">Політики конфіденційності</a>
+							</span>
+						</label>
+					</form>
+				</div>
+			</div>
+			<p class="contact__description">
+				Ми щиро цінуємо ваше бажання бути з нами. Кожне звернення для нас - це можливість допомогти і стати частиною вашого комфорту.
+				<br />
+				Дякуємо, що обираєте
+				<strong>Soft Clean</strong>
+				- разом завжди краще!
+			</p>
 		</div>
 	</div>
 </section>

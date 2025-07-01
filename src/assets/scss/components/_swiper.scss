@@ -38,7 +38,7 @@
 .swiper-button-next {
 	background-color: $blue;
 
-	border-radius: 5rem;
+	border-radius: $border-50;
 	box-shadow: inset 0 4px 1rem 0 rgba($white, 0.3);
 
 	@media (min-width: 768px) {

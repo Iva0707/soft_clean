@@ -3,7 +3,7 @@
 
 	background: $white;
 
-	border-radius: 2rem;
+	border-radius: $border-20;
 
 	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
 	overflow: hidden;
@@ -28,6 +28,7 @@
 
 	border: none;
 
+	will-change: color;
 	transition: color 0.2s ease;
 	cursor: pointer;
 
@@ -52,11 +53,12 @@
 
 	background-color: $blue;
 
-	border-radius: 50%;
-
 	box-shadow: 0 2px 4px 0 $blue;
 	transform: translateY(-50%);
+	will-change: background-color;
 	transition: background-color 0.2s ease;
+
+	@include image-round;
 
 	@media (min-width: 768px) {
 		right: 3rem;
@@ -81,6 +83,7 @@
 
 		@include pseudo-center;
 
+		will-change: background;
 		transition: background 0.2s ease;
 
 		.accordion__item--active_state & {
@@ -96,6 +99,7 @@
 	opacity: 0;
 	overflow: hidden;
 
+	will-change: max-height, opacity;
 	transition: max-height 0.2s ease, opacity 0.2s ease;
 	will-change: max-height;
 	pointer-events: none;
