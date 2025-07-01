@@ -136,7 +136,7 @@
 	display: block;
 	text-decoration: none;
 
-	@extend .h5;
+	@include h5;
 
 	font-weight: 600;
 
@@ -152,7 +152,7 @@
 
 	color: $gray;
 
-	@extend .text--small;
+	@include text--small;
 }
 
 .header-nav__media_wrapp {

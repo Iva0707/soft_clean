@@ -58,7 +58,7 @@
 .calculation__description {
 	display: inline-block;
 
-	@extend h5;
+	@include h5;
 
 	&:not(:last-child) {
 		@media (min-width: 768px) {
@@ -155,7 +155,7 @@
 
 	color: $gray;
 
-	@extend .text--small;
+	@include text--small;
 
 	& img {
 		width: 1.8rem;

@@ -35,7 +35,7 @@
 }
 
 .additional-services-item__info {
-	@extend .text--small;
+	@include text--small;
 
 	span {
 		display: block;

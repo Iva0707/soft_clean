@@ -45,7 +45,7 @@
 
 	text-align: center;
 
-	@extend .text--small;
+	@include text--small;
 
 	.navigation__item--active & {
 		padding-inline: 3.5rem;

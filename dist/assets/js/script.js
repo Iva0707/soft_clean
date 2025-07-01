@@ -420,14 +420,14 @@ const burger = ({ header, burger, menu }) => {
 		burger.classList.toggle("active");
 		menu.classList.toggle("active");
 		document.body.classList.toggle("scroll-lock");
-		document.body.classList.toggle("body-overflow");
+		document.body.classList.toggle("body--overflow");
 	};
 
 	const closeMenu = () => {
 		burger.classList.remove("active");
 		menu.classList.remove("active");
 		document.body.classList.remove("scroll-lock");
-		document.body.classList.remove("body-overflow");
+		document.body.classList.remove("body--overflow");
 	};
 
 	burger.addEventListener("click", (event) => {
@@ -531,6 +531,79 @@ const stickyNav = () => {
 	});
 };
 
+// ____________ tel input validation ____________________
+
+const phoneMask = ({ input }) => {
+	if (!input) return;
+
+	const formatPhoneInput = () => {
+		let value = input.value.replace(/\D/g, "");
+		value = value.slice(0, 12);
+
+		let result = "+";
+
+		if (value.startsWith("380")) {
+			result += "380 ";
+			if (value.length > 3) result += "(";
+			if (value.length > 5) result += value.slice(3, 5) + ") ";
+			else if (value.length > 3) result += value.slice(3);
+			if (value.length > 8) result += value.slice(5, 8) + "-";
+			else if (value.length > 5) result += value.slice(5);
+			if (value.length > 10) result += value.slice(8, 10) + "-";
+			else if (value.length > 8) result += value.slice(8);
+			if (value.length > 10) result += value.slice(10, 12);
+		} else {
+			if (value.startsWith("0")) {
+				value = "380" + value.slice(1);
+			} else if (!value.startsWith("3")) {
+				value = "380" + value;
+			}
+
+			result = "+380 ";
+			if (value.length > 3) result += "(";
+			if (value.length > 5) result += value.slice(3, 5) + ") ";
+			else if (value.length > 3) result += value.slice(3);
+			if (value.length > 8) result += value.slice(5, 8) + "-";
+			else if (value.length > 5) result += value.slice(5);
+			if (value.length > 10) result += value.slice(8, 10) + "-";
+			else if (value.length > 8) result += value.slice(8);
+			if (value.length > 10) result += value.slice(10, 12);
+		}
+
+		input.value = result;
+	};
+
+	const isValidPhone = (phone) => {
+		const cleaned = phone.replace(/\D/g, "");
+		return /^380\d{9}$/.test(cleaned);
+	};
+
+	input.addEventListener("input", formatPhoneInput);
+
+	input.closest("form").addEventListener("submit", (e) => {
+		if (!isValidPhone(input.value)) {
+			e.preventDefault();
+			input.classList.add("input--error");
+		} else {
+			input.classList.remove("input--error");
+		}
+	});
+};
+
+const initPhoneMask = () => {
+	const SELECTORS = {
+		input: "input[type='tel']",
+	};
+
+	const inputs = document.querySelectorAll(SELECTORS.input);
+
+	inputs.forEach((input) => {
+		phoneMask({
+			input,
+		});
+	});
+};
+
 // ____________ main ____________________
 
 const main = () => {
@@ -541,6 +614,7 @@ const main = () => {
 	initImageGallery();
 	initBurger();
 	stickyNav();
+	initPhoneMask();
 };
 
 window.onload = () => {

@@ -32,7 +32,11 @@ body {
 		@include pseudo-full;
 	}
 
-	&.body-overflow {
+	&.boby--scroll-lock {
+		overflow: hidden;
+	}
+
+	&.body--overflow {
 		position: relative;
 
 		&::before {
@@ -163,14 +167,24 @@ section {
 	}
 }
 
+.container {
+	margin: 0 auto;
+
+	@media (min-width: 768px) {
+		max-width: 112.4rem;
+		padding: 0 5rem;
+	}
+
+	@media (max-width: 767px) {
+		max-width: 100%;
+		padding: 0 2rem;
+	}
+}
+
 img {
 	display: block;
 	user-select: none;
 	pointer-events: none;
-}
-
-button {
-	font-family: inherit;
 }
 
 a:not(.button) {
@@ -197,210 +211,21 @@ a:not(.button) {
 	color: $blue;
 }
 
-// typography
-b,
-strong {
-	font-weight: 700;
-}
-
-h1,
-.h1 {
-	font-weight: 600;
-
-	@media (min-width: 768px) {
-		font-size: 3.4rem;
-	}
-
-	@media (max-width: 767px) {
-		font-size: 2.6rem;
-	}
-}
-
-h2,
-.h2 {
-	font-weight: 600;
-
-	@media (min-width: 768px) {
-		font-size: 3rem;
-	}
-
-	@media (max-width: 767px) {
-		font-size: 2.4rem;
-	}
-}
-
-h3,
-.h3 {
-	font-weight: 600;
-
-	@media (min-width: 768px) {
-		font-size: 2.2rem;
-	}
-
-	@media (max-width: 767px) {
-		font-size: 1.8rem;
-	}
-}
-
-h4,
-.h4 {
-	font-weight: 600;
-
-	@media (min-width: 768px) {
-		font-size: 1.8rem;
-	}
-
-	@media (max-width: 767px) {
-		font-size: 1.6rem;
-	}
-}
-
-h5,
-.h5 {
-	font-weight: 600;
-	font-size: 1.6rem;
-}
-
-// h6,
-// .h6 {
-// }
-
-.text--small {
-	font-size: 1.4rem;
-	font-weight: 500;
-}
-
-// input
-input {
-	padding-inline: 3.5rem;
-
-	font-family: $font;
-	color: $gray;
-
-	background: $white;
-
-	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
-
-	border: 1px solid transparent;
-	border-radius: $border-100;
-
-	&:not([type="checkbox"]) {
-		@media (min-width: 768px) {
-			min-height: 7rem;
-		}
-
-		@media (max-width: 767px) {
-			min-height: 5rem;
-		}
-	}
-
-	&.input--small {
-		min-height: 5.6rem;
-	}
-
-	&:hover,
-	&:focus-visible {
-		outline: none;
-	}
-
-	&::placeholder {
-		font-weight: 400;
-		color: $gray;
-	}
-
-	@extend .text--small;
-}
-
-.checkbox {
-	position: relative;
-
-	display: flex;
-	align-items: center;
-	gap: 1.2rem;
-
-	text-align: start;
-
-	cursor: pointer;
-
-	.checkbox__input {
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		height: 0.1rem;
-		width: 0.1rem;
-
-		opacity: 0;
-		pointer-events: auto;
-		z-index: 2;
-	}
-
-	.checkbox__title {
-		position: relative;
-
-		display: inline-block;
-
-		padding-left: 2.6rem;
-
-		@extend .text--small;
-
-		font-weight: 400;
-
-		&::before,
-		&::after {
-			@include pseudo-y-center;
-		}
-
-		&::before {
-			width: 1.4rem;
-			height: 1.4rem;
-
-			border: 1px solid $yellow;
-			border-radius: 4px;
-
-			will-change: background;
-			transition: background 0.2s ease;
-		}
-
-		&::after {
-			left: 4px;
-
-			width: 1rem;
-			height: 1rem;
-
-			background: url(../images/svg/checkmark.svg) no-repeat;
-
-			opacity: 0;
-
-			will-change: opacity;
-			transition: opacity 0.2s ease;
-		}
-	}
-
-	.checkbox__input:checked + .checkbox__title::before {
-		background-color: $yellow;
-	}
-
-	.checkbox__input:checked + .checkbox__title::after {
-		opacity: 1;
-	}
-}
-
 //to do
 // 1. Валидация форм
-// 2. Клики по табу
-// 3. Семантика
+// - Переписать transform на новый стиль
+// + Семантика
+// + Проверить бем
+// + Клики по табу
 // + Выделение цветом
 // + Политика
 // - Возможно смена языка
 // + Попробовать закрепить навигацию
 // + Миксины радиуса и транзишн
 // + Линк бланк
-// 10. Переписать transform на новый стиль
 // + Навести порядок в dev изображениях
-// 12. Перенести типограцию и сделать через @include
+// + Перенести типограцию и сделать через @include
 // - Анимация числа
-// 14. Навести порядок в типографии
-// 15. Разнести base
+// + Навести порядок в типографии
+// + Разнести base
 // + Контакт
-// 17. Проверить бем

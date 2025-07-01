@@ -104,12 +104,14 @@
 	border-radius: $border-100;
 }
 
-.services-item__button--1 {
-	&:not(:last-child) {
-		margin-bottom: 0.5rem;
+.services-item__button {
+	&.services-item__button--1 {
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
 	}
-}
 
-.services-item__button--2 {
-	text-transform: none;
+	&.services-item__button--2 {
+		text-transform: none;
+	}
 }

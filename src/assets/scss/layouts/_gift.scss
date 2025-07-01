@@ -76,7 +76,7 @@
 }
 
 .gift-item__title {
-	@extend h5;
+	@include h5;
 }
 
 .gift-item__description {

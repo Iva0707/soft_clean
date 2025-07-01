@@ -136,7 +136,7 @@
 }
 
 .inventory-item__title {
-	@extend h5;
+	@include h5;
 
 	&:not(:last-child) {
 		margin-bottom: 0.6rem;

@@ -220,7 +220,7 @@
 .gallery-slide__description {
 	color: $gray;
 
-	@extend .text--small;
+	@include text--small;
 
 	&:not(:last-child) {
 		margin-bottom: 1.5rem;

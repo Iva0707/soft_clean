@@ -32,7 +32,7 @@
 	transition: color 0.2s ease;
 	cursor: pointer;
 
-	@extend .text--small;
+	@include text--small;
 
 	@media (min-width: 768px) {
 		padding: 2.6rem 8rem 2.6rem 3rem;

@@ -46,7 +46,7 @@
 
 	text-align: left;
 
-	@extend h5;
+	@include h5;
 
 	&:not(:last-child) {
 		@media (min-width: 768px) {
@@ -89,7 +89,7 @@
 }
 
 .contact__info_item {
-	@extend .h4;
+	@include h4;
 
 	font-weight: 500;
 
@@ -178,7 +178,7 @@
 	text-align: center;
 	color: $gray;
 
-	@extend .h5;
+	@include h5;
 
 	@media (max-width: 767px) {
 		font-weight: 500;
