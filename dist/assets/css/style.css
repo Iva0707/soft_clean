@@ -648,8 +648,16 @@ input {
     }
 }
 
-input.input--small {
-    min-height: 5.6rem;
+@media (min-width: 768px) {
+    input.input--small {
+        min-height: 5.6rem;
+    }
+}
+
+@media (max-width: 767px) {
+    input.input--small {
+        min-height: 4.4rem;
+    }
 }
 
 .form--error input {

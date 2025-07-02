@@ -54,14 +54,14 @@ const burger = ({ header, burger, menu }) => {
 	const toggleClasses = () => {
 		burger.classList.toggle("active");
 		menu.classList.toggle("active");
-		document.body.classList.toggle("scroll-lock");
+		document.body.classList.toggle("boby--scroll-lock");
 		document.body.classList.toggle("body--overflow");
 	};
 
 	const closeMenu = () => {
 		burger.classList.remove("active");
 		menu.classList.remove("active");
-		document.body.classList.remove("scroll-lock");
+		document.body.classList.remove("boby--scroll-lock");
 		document.body.classList.remove("body--overflow");
 	};
 

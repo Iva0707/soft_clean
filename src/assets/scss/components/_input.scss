@@ -27,7 +27,13 @@ input {
 	}
 
 	&.input--small {
-		min-height: 5.6rem;
+		@media (min-width: 768px) {
+			min-height: 5.6rem;
+		}
+
+		@media (max-width: 767px) {
+			min-height: 4.4rem;
+		}
 	}
 
 	.form--error & {
