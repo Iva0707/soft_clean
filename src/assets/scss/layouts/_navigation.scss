@@ -44,6 +44,12 @@
 	min-height: 7rem;
 
 	text-align: center;
+	color: $black;
+
+	background-color: transparent;
+
+	will-change: background-color, color;
+	transition: background-color 0.2s, color 0.2s;
 
 	@include text--small;
 

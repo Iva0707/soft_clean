@@ -4,16 +4,17 @@ form {
 
 input {
 	padding-inline: 3.5rem;
+	width: 100%;
 
 	font-family: $font;
 	color: $gray;
 
 	background: $white;
 
-	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
-
 	border: 1px solid transparent;
 	border-radius: $border-100;
+
+	box-shadow: 0 3px 1.5rem 0 rgba($black, 0.1);
 
 	&:not([type="checkbox"]) {
 		@media (min-width: 768px) {
@@ -29,8 +30,12 @@ input {
 		min-height: 5.6rem;
 	}
 
-	&.input--error {
+	.form--error & {
 		border: 1px solid $red;
+	}
+
+	.form--success & {
+		border: 1px solid $green;
 	}
 
 	&:hover,
@@ -117,5 +122,40 @@ input {
 
 	.checkbox__input:checked + .checkbox__title::after {
 		opacity: 1;
+	}
+}
+
+.form__message {
+	position: absolute;
+	top: -3.8rem;
+	left: 0;
+
+	padding: 0.5rem;
+	width: max-content;
+
+	color: $black;
+
+	background-color: rgba($white, 0.7);
+
+	border-radius: $border-10;
+
+	will-change: opacity, visibility;
+	transition: opacity 0.2s, visibility 0.2s;
+
+	opacity: 0;
+	visibility: hidden;
+
+	&.form__message--ssucces {
+		.form--success & {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.form__message--error {
+		.form--error & {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
